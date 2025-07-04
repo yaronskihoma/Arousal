@@ -290,8 +290,12 @@
                        webkit-playsinline
                        controls="false"
                        disableremoteplayback
-                       controlslist="nodownload noplaybackrate nofullscreen noremoteplaybook"
+                       disablepictureinpicture
+                       controlslist="nodownload noplaybackrate nofullscreen noremoteplayback"
                        oncontextmenu="return false;"
+                       onclick="return false;"
+                       ondblclick="return false;"
+                       ontouchstart="return false;"
                        style="pointer-events: none; position: relative;">
                     <source src="" type="video/mp4">
                     Your browser does not support the video tag.
