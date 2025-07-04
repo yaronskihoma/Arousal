@@ -174,7 +174,6 @@
         }
 
         .debug-panel {
-            display: none; /* Hidden from users */
             background: #f8f9fa;
             border: 1px solid #e9ecef;
             border-radius: 10px;
@@ -232,52 +231,6 @@
                 font-size: 1em !important;
                 min-width: 140px !important;
             }
-        }
-        
-        .question-section {
-            margin: 30px 0;
-            text-align: left;
-        }
-        
-        .question {
-            margin-bottom: 25px;
-        }
-        
-        .question label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .question textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 16px;
-            resize: vertical;
-            min-height: 100px;
-            box-sizing: border-box;
-        }
-        
-        .question select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 16px;
-            background: white;
-            box-sizing: border-box;
-        }
-        
-        .question textarea:focus,
-        .question select:focus {
-            outline: none;
-            border-color: #007bff;
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
         }
     </style>
 </head>
@@ -340,26 +293,12 @@
         <div class="step" id="step4">
             <h1>🎬 Video Task</h1>
             <h2>Please watch the video carefully</h2>
-            
-            <!-- Sound Instructions -->
-            <div style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 10px; padding: 15px; margin: 20px 0; color: #856404;">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                    <div style="font-size: 1.5em;">🔊</div>
-                    <div style="font-weight: bold;">Sound Required</div>
-                </div>
-                <div style="font-size: 0.9em; line-height: 1.4;">
-                    <p style="margin: 0 0 8px 0;">• Please ensure your device sound is <strong>turned ON</strong></p>
-                    <p style="margin: 0 0 8px 0;">• Check that your volume is at a comfortable level</p>
-                    <p style="margin: 0;">• Audio is important for the complete experience</p>
-                </div>
-            </div>
-            
             <div class="video-container">
                 <video id="videoPlayer" 
+                       muted 
                        preload="auto" 
                        playsinline 
                        webkit-playsinline
-                       x-webkit-airplay="deny"
                        controls="false"
                        disableremoteplayback
                        disablepictureinpicture
@@ -391,11 +330,8 @@
                     pointer-events: all;
                     gap: 20px;
                 ">
-                    <div style="text-align: center; margin-bottom: 15px;">
+                    <div style="text-align: center; margin-bottom: 10px;">
                         🎬 Ready to start emotion tracking
-                    </div>
-                    <div style="text-align: center; margin-bottom: 15px; font-size: 0.9em; color: #ffd700;">
-                        🔊 Make sure your sound is ON
                     </div>
                     <button id="startVideoBtn" style="
                         background: linear-gradient(45deg, #667eea, #764ba2);
@@ -410,11 +346,8 @@
                         box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
                         min-width: 160px;
                         -webkit-tap-highlight-color: transparent;
-                        -webkit-touch-callout: none;
-                        -webkit-user-select: none;
                         user-select: none;
                         outline: none;
-                        touch-action: manipulation;
                     " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.6)'" 
                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.4)'"
                        ontouchstart="this.style.transform='translateY(-1px)'"
@@ -445,47 +378,16 @@
             <div id="processingStatus"></div>
         </div>
 
-        <!-- Step 6: Questionnaire -->
+        <!-- Step 6: Completion -->
         <div class="step" id="step6">
-            <h1>📝 Quick Survey</h1>
-            <h2>Please answer these 2 questions:</h2>
-            
-            <div class="question-section">
-                <div class="question">
-                    <label for="question1">1. Please describe the most memorable moment from the video:</label>
-                    <textarea id="question1" rows="4" placeholder="What moment stood out to you the most?"></textarea>
-                </div>
-                
-                <div class="question">
-                    <label for="question2">2. What is the chance of you will play this game?</label>
-                    <select id="question2">
-                        <option value="">Select your answer</option>
-                        <option value="Very unlikely">Very unlikely</option>
-                        <option value="Unlikely">Unlikely</option>
-                        <option value="Neutral">Neutral</option>
-                        <option value="Likely">Likely</option>
-                        <option value="Very likely">Very likely</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div id="questionnaireStatus" style="margin: 20px 0;"></div>
-            
-            <button class="btn" id="submitQuestionnaire">Submit & Complete Task</button>
-        </div>
-
-        <!-- Step 7: Completion -->
-        <div class="step" id="step7">
             <h1>✅ Task Complete</h1>
             <h2>Thank you for participating!</h2>
             <div class="completion-code" id="completionCode"></div>
             <p>Please use this code in your survey platform.</p>
-            <div id="dataUploadSection" style="margin: 20px 0;">
-                <p style="font-size: 1em; color: #28a745; margin-bottom: 15px;">
-                    ✅ Your data has been successfully uploaded to our secure storage.
-                </p>
+            <div id="dataDownloadSection" style="margin: 20px 0;">
+                <button class="btn" id="downloadDataBtn" style="background: #17a2b8;">Download Data (JSON)</button>
                 <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
-                    No further action required - your data is safely stored and ready for analysis.
+                    Optional: Download your emotion tracking data for analysis
                 </p>
             </div>
             <button class="btn" id="restartBtn">Start New Session</button>
@@ -499,17 +401,11 @@
             TASK_ID: 'TASK-CLEAN',
             COMPLETION_CODE: 'CLEAN123',
             MORPHCAST_LICENSE: 'ap95c1923492e8512306644ca7fea0e66e7c27a47b97bb',
-            // Fixed Supabase configuration (matching your actual project)
-            SUPABASE_URL: 'https://nxlyelvtfphybhyfhxwc.supabase.co', // Your actual project URL
-            SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54bHllbHZ0ZnBoeWJoeWZoeHdjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MTYyNzgxOSwiZXhwIjoyMDY3MjAzODE5fQ.8F-la271rAdg-kPuxEySLUDaKyqNItrsoOzwoWWjnbw',   // Your service role key
+            // Updated Supabase URL from working V1 examples
+            SUPABASE_URL: 'https://szshayacurojnsbdcwkc.supabase.co',
+            SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN6c2hheWFjdXJvam5zYmRjd2tjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMTg2MTU0MywiZXhwIjoyMDQ3NDM3NTQzfQ.GQIgU6vFz0ZcIgxmuNxAXQnpoaqh3YKdCdHQMFTJvUg',
             VIDEO_DURATION: 24,
-            TIMELINE_DURATION: 30,
-            // Storage and database configuration
-            SUPABASE_STORAGE_BUCKET: 'cay250704',
-            SUPABASE_TABLE: 'emotion_tracking_data',  // Fixed table name
-            STORAGE_ENDPOINT: 'https://nxlyelvtfphybhyfhxwc.supabase.co/storage/v1/s3',  // Your actual endpoint
-            STORAGE_REGION: 'eu-west-3',
-            AUTO_UPLOAD: true  // Enable automatic background upload
+            TIMELINE_DURATION: 30
         };
 
         // ==================== GLOBAL VARIABLES ====================
@@ -536,11 +432,8 @@
             lastUpdate: null
         };
         
-        // Store processed data for upload
+        // Store processed data for download
         let processedReportData = null;
-        
-        // User ID counter (simple incrementing)
-        let currentUserId = null;
         
         // Face detection validation
         let faceDetectionWindow = null;
@@ -559,11 +452,17 @@
                 'debug': '🔧'
             }[type] || 'ℹ️';
             
-            // Always log to console for debugging
             console.log(`${emoji} [${timestamp}] ${message}`);
             
-            // REMOVED: Debug panel display - keep logs only in console
-            // No longer showing logs to user interface
+            // Add to debug panel if visible
+            const debugPanel = document.getElementById('systemDebug');
+            if (debugPanel) {
+                const entry = document.createElement('div');
+                entry.className = 'debug-entry';
+                entry.innerHTML = `<strong>[${timestamp}]</strong> ${emoji} ${message}`;
+                debugPanel.appendChild(entry);
+                debugPanel.scrollTop = debugPanel.scrollHeight;
+            }
         }
 
         function showStatus(elementId, message, type = 'info') {
@@ -1017,12 +916,6 @@
             // Video event listeners
             video.onloadedmetadata = () => {
                 log(`Video metadata loaded: ${video.duration}s`, 'debug');
-                
-                // Ensure sound is enabled when video loads
-                video.muted = false;
-                video.volume = 0.8;
-                log('Video sound configuration verified', 'debug');
-                
                 showStatus('videoStatus', 'Video loaded successfully', 'success');
                 startBtn.disabled = false;
             };
@@ -1071,13 +964,6 @@
                     } catch (error) {
                         log(`Error resuming emotion tracking: ${error.message}`, 'warning');
                     }
-                }
-                
-                // Confirm sound is playing
-                if (!video.muted && video.volume > 0) {
-                    showStatus('videoStatus', '🔊 Video playing with sound - emotion tracking active', 'success');
-                } else {
-                    showStatus('videoStatus', '🔇 Video playing (muted) - emotion tracking active', 'warning');
                 }
             };
             
@@ -1168,19 +1054,6 @@
                     window.allowVideoPlay();
                 }
                 
-                // Safari-specific: Ensure video is fully loaded before starting
-                if (video.readyState < 2) {
-                    log('Safari: Waiting for video to load...', 'info');
-                    await new Promise((resolve) => {
-                        const onCanPlay = () => {
-                            video.removeEventListener('canplay', onCanPlay);
-                            resolve();
-                        };
-                        video.addEventListener('canplay', onCanPlay);
-                        video.load(); // Force reload for Safari
-                    });
-                }
-                
                 // Initialize emotion tracking
                 await initializeEmotionTracking();
                 
@@ -1191,6 +1064,9 @@
                 
                 // Enable video interactions only when starting properly
                 video.style.pointerEvents = 'auto';
+                
+                // Enter fullscreen mode before starting video
+                await enterFullscreen(video);
                 
                 // Disable video controls and prevent seeking
                 video.controls = false;
@@ -1206,35 +1082,15 @@
                 // Prevent keyboard shortcuts
                 document.addEventListener('keydown', preventKeyboardShortcuts);
                 
-                // Ensure video sound is enabled
-                video.muted = false;
-                video.volume = 0.8; // Set to 80% volume
-                log('Video sound enabled and volume set to 80%', 'info');
-                
-                // Safari-specific: Try to start video first, then fullscreen
-                log('Safari: Starting video play...', 'info');
+                // Start video
                 await video.play();
                 videoStartTime = Date.now();
-                
-                // Safari-specific: Enter fullscreen after video starts playing
-                try {
-                    await enterFullscreen(video);
-                } catch (fullscreenError) {
-                    // Safari may block fullscreen - continue without it
-                    log(`Safari: Fullscreen blocked: ${fullscreenError.message}`, 'warning');
-                }
                 
                 // Show real-time emotion data
                 document.getElementById('emotionData').style.display = 'block';
                 
-                log('Video started successfully', 'success');
-                
-                // Show sound status feedback
-                if (!video.muted && video.volume > 0) {
-                    showStatus('videoStatus', '🔊 Video playing with sound - emotion tracking active', 'success');
-                } else {
-                    showStatus('videoStatus', '🔇 Video playing (check sound) - emotion tracking active', 'warning');
-                }
+                log('Video started successfully in fullscreen', 'success');
+                showStatus('videoStatus', 'Video playing - emotion tracking active', 'success');
                 
             } catch (error) {
                 log(`Video start failed: ${error.message}`, 'error');
@@ -1567,11 +1423,21 @@
                 // Store for download
                 processedReportData = reportData;
                 
-                updateProgress('processingProgress', 80);
-                showStatus('processingStatus', 'Preparing data for upload...', 'info');
+                updateProgress('processingProgress', 50);
                 
-                // Data will be uploaded after questionnaire is completed
-                log('Data processing complete, moving to questionnaire', 'info');
+                // Save to Supabase (optional)
+                log('Attempting to save data to Supabase...', 'debug');
+                try {
+                    await saveToSupabase(reportData);
+                    log('Data saved to Supabase successfully', 'success');
+                } catch (error) {
+                    log(`Supabase save failed: ${error.message}`, 'warning');
+                    log('Continuing without database save - data processing will complete', 'info');
+                    
+                    // Save data locally as fallback
+                    console.log('💾 Tracking Data (Local Save):', reportData);
+                    log('Data saved to browser console for debugging', 'info');
+                }
                 
                 updateProgress('processingProgress', 80);
                 
@@ -1592,7 +1458,7 @@
                 showStatus('processingStatus', 'Data processing completed successfully!', 'success');
                 
                 setTimeout(() => {
-                    showQuestionnaire();
+                    showCompletion();
                 }, 1000);
                 
             } catch (error) {
@@ -1664,183 +1530,62 @@
             return summary;
         }
 
-        // Legacy saveToSupabase function removed - now using storage upload + database record
-
-        // ==================== QUESTIONNAIRE ====================
-        function showQuestionnaire() {
-            // Exit fullscreen when moving to questionnaire
-            try {
-                if (document.fullscreenElement) {
-                    document.exitFullscreen().catch(err => {
-                        log(`Error exiting fullscreen: ${err.message}`, 'warning');
-                    });
-                    log('Exited fullscreen mode', 'debug');
-                }
-            } catch (error) {
-                log(`Fullscreen exit failed: ${error.message}`, 'warning');
-            }
-            
-            showStep(6);
-            log('Showing questionnaire', 'info');
-        }
-        
-        async function submitQuestionnaire() {
-            try {
-                const question1 = document.getElementById('question1').value.trim();
-                const question2 = document.getElementById('question2').value;
-                
-                // Validate answers
-                if (!question1) {
-                    showStatus('questionnaireStatus', 'Please answer the first question', 'error');
-                    return;
-                }
-                
-                if (!question2) {
-                    showStatus('questionnaireStatus', 'Please select an answer for the second question', 'error');
-                    return;
-                }
-                
-                showStatus('questionnaireStatus', 'Submitting answers and uploading data...', 'info');
-                
-                // Generate user ID
-                currentUserId = await getNextUserId();
-                
-                // Create filename for JSON
-                const filename = `emotion_data_user_${currentUserId}_${Date.now()}.json`;
-                
-                // Upload JSON to Supabase Storage (with retry)
-                const uploadResult = await uploadWithRetry(processedReportData, filename);
-                
-                if (uploadResult) {
-                    // Create database record
-                    await createUserRecord(currentUserId, filename, question1, question2);
-                    
-                    showStatus('questionnaireStatus', 'Successfully submitted!', 'success');
-                    
-                    setTimeout(() => {
-                        showCompletion();
-                    }, 1000);
-                } else {
-                    throw new Error('Failed to upload data');
-                }
-                
-            } catch (error) {
-                log(`Questionnaire submission failed: ${error.message}`, 'error');
-                showStatus('questionnaireStatus', `Submission failed: ${error.message}`, 'error');
-            }
-        }
-        
-        async function getNextUserId() {
+        async function saveToSupabase(reportData) {
             try {
                 const { data, error } = await supabaseClient
-                    .from(CONFIG.SUPABASE_TABLE)
-                    .select('user_id')
-                    .order('user_id', { ascending: false })
-                    .limit(1);
-                
-                if (error) throw error;
-                
-                if (data && data.length > 0) {
-                    return data[0].user_id + 1;
-                } else {
-                    return 1; // First user
-                }
-            } catch (error) {
-                log(`Failed to get next user ID: ${error.message}`, 'warning');
-                return Math.floor(Math.random() * 10000) + 1; // Fallback to random ID
-            }
-        }
-        
-        async function uploadToSupabaseStorage(data, filename) {
-            try {
-                if (!supabaseClient) {
-                    throw new Error('Supabase client not initialized');
-                }
-                
-                // Convert data to JSON string (using V1 pattern)
-                const jsonData = JSON.stringify(data, null, 2);
-                const fileBlob = new Blob([jsonData], { type: 'application/json' });
-                
-                // Check file size (V1 pattern)
-                if (fileBlob.size > 5 * 1024 * 1024) {
-                    throw new Error('File too large (>5MB)');
-                }
-                
-                log(`Uploading ${filename} to bucket: ${CONFIG.SUPABASE_STORAGE_BUCKET}`, 'debug');
-                
-                // Upload to Supabase Storage (using V1 working pattern)
-                const { data: uploadData, error } = await supabaseClient.storage
-                    .from(CONFIG.SUPABASE_STORAGE_BUCKET)
-                    .upload(filename, fileBlob, {
-                        cacheControl: '3600',
-                        contentType: 'application/json',
-                        upsert: true  // Fixed: V1 uses upsert: true
-                    });
-                
-                if (error) {
-                    log(`Supabase upload error details: ${JSON.stringify(error)}`, 'error');
-                    throw error;
-                }
-                
-                log(`JSON file uploaded successfully: ${filename}`, 'success');
-                return uploadData;
-                
-            } catch (error) {
-                log(`Storage upload failed: ${error.message}`, 'error');
-                console.error('Supabase upload error:', error);
-                throw error;
-            }
-        }
-
-        // Add retry logic like V1
-        async function uploadWithRetry(data, filename, maxRetries = 3) {
-            for (let i = 0; i < maxRetries; i++) {
-                try {
-                    return await uploadToSupabaseStorage(data, filename);
-                } catch (error) {
-                    log(`Upload attempt ${i + 1} failed: ${error.message}`, 'warning');
-                    if (i === maxRetries - 1) throw error;
-                    await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1)));
-                }
-            }
-        }
-        
-        async function createUserRecord(userId, filename, answer1, answer2) {
-            try {
-                if (!supabaseClient) {
-                    throw new Error('Supabase client not initialized');
-                }
-                
-                const { data, error } = await supabaseClient
-                    .from(CONFIG.SUPABASE_TABLE)
+                    .from('emotion_reports')
                     .insert([{
-                        user_id: userId,
-                        json_filename: filename,
-                        question1_memorable_moment: answer1,
-                        question2_play_chance: answer2,
-                        task_id: CONFIG.TASK_ID,
-                        video_url: CONFIG.VIDEO_URL,
-                        created_at: new Date().toISOString()
+                        worker_id: reportData.workerId,
+                        task_id: reportData.taskId,
+                        timestamp: reportData.timestamp,
+                        video_url: reportData.videoUrl,
+                        video_duration: reportData.videoDuration,
+                        tracking_data: reportData.trackingData,
+                        summary: reportData.summary
                     }]);
                 
                 if (error) throw error;
                 
-                log(`User record created successfully: User ${userId}`, 'success');
+                log('Data saved to Supabase successfully', 'success');
                 
             } catch (error) {
-                log(`Database record creation failed: ${error.message}`, 'error');
+                log(`Supabase save failed: ${error.message}`, 'error');
                 throw error;
             }
         }
 
         // ==================== COMPLETION ====================
         function showCompletion() {
-            showStep(7);
+            showStep(6);
             document.getElementById('completionCode').textContent = CONFIG.COMPLETION_CODE;
-            log('Task completed successfully - data uploaded to storage', 'success');
+            log('Task completed successfully', 'success');
         }
         
-        // Download function removed - data is now automatically uploaded to database
+        function downloadData() {
+            if (!processedReportData) {
+                log('No data available for download', 'warning');
+                return;
+            }
+            
+            try {
+                const dataStr = JSON.stringify(processedReportData, null, 2);
+                const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(dataBlob);
+                
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `emotion_data_${processedReportData.workerId}_${Date.now()}.json`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                URL.revokeObjectURL(url);
+                log('Data downloaded successfully', 'success');
+                
+            } catch (error) {
+                log(`Download failed: ${error.message}`, 'error');
+            }
+        }
 
         async function restartSession() {
             log('Restarting session...', 'info');
@@ -1920,13 +1665,8 @@
             // Set up event listeners
             document.getElementById('allowCameraBtn').addEventListener('click', requestCameraAccess);
             document.getElementById('proceedToVideoBtn').addEventListener('click', proceedToVideo);
-            
-            // Safari-compatible event listeners for start video button
-            const startVideoBtn = document.getElementById('startVideoBtn');
-            startVideoBtn.addEventListener('click', startVideo);
-            startVideoBtn.addEventListener('touchstart', startVideo, { passive: false });
-            
-            document.getElementById('submitQuestionnaire').addEventListener('click', submitQuestionnaire);
+            document.getElementById('startVideoBtn').addEventListener('click', startVideo);
+            document.getElementById('downloadDataBtn').addEventListener('click', downloadData);
             document.getElementById('restartBtn').addEventListener('click', async () => {
                 await restartSession();
             });
@@ -1947,4 +1687,3 @@
     </script>
 </body>
 </html>
-
