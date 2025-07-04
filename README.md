@@ -4,7 +4,9 @@ A web-based emotion tracking application that uses AI to analyze facial expressi
 
 ## 📱 Mobile Demo
 
-**Live Demo:** [Access on your phone](https://github.com/vitaliyaronski/Arousal) (GitHub Pages link will be added after deployment)
+**Live Demo:** [Access on your phone](https://yaronskihoma.github.io/Arousal/) 📱
+
+**Quick Start:** [https://yaronskihoma.github.io/Arousal/V2/webapp/emotion-tracker.html](https://yaronskihoma.github.io/Arousal/V2/webapp/emotion-tracker.html)
 
 ## 🌟 Features
 
