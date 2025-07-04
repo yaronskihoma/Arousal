@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Tracker V2 - Clean Architecture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            color: #333;
+            text-align: center;
+        }
+
+        .step {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        #privacyPolicy {
+            text-align: left;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        #privacyPolicy h1 {
+            font-size: 1.5em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        #privacyPolicy h2 {
+            font-size: 1.2em;
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+        }
+
+        #privacyPolicy p, #privacyPolicy li {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        #privacyPolicy ul {
+            margin-left: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+            pointer-events: none;
+        }
+        
+        /* Completely hide video controls across all browsers */
+        video::-webkit-media-controls {
+            display: none !important;
+        }
+        
+        video::-webkit-media-controls-panel {
+            display: none !important;
+        }
+        
+        video::-webkit-media-controls-play-button {
+            display: none !important;
+        }
+        
+        video::-webkit-media-controls-start-playback-button {
+            display: none !important;
+        }
+        
+        video::-moz-media-controls {
+            display: none !important;
+        }
+        
+        video::-ms-media-controls {
+            display: none !important;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .status {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status.warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .debug-panel {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            max-height: 300px;
+            overflow-y: auto;
+            text-align: left;
+            font-family: monospace;
+            font-size: 0.9em;
+            display: none; /* Hide debug panel from users */
+        }
+
+        .debug-entry {
+            margin: 5px 0;
+            padding: 3px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .debug-entry:last-child {
+            border-bottom: none;
+        }
+
+        .completion-code {
+            background: #28a745;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .btn {
+                min-width: 150px;
+                font-size: 1em;
+            }
+            
+            /* Mobile-specific styling for video overlay button */
+            #videoOverlay {
+                font-size: 1em !important;
+            }
+            
+            #videoOverlay button {
+                padding: 12px 25px !important;
+                font-size: 1em !important;
+                min-width: 140px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Step 1: System Check -->
+        <div class="step active" id="step1">
+            <h1>🔍 System Check</h1>
+            <p>Checking system components and configuration...</p>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="systemProgress"></div>
+            </div>
+            <div id="systemStatus"></div>
+            
+            <!-- Video preload status -->
+            <div id="preloadStatus" style="display: none; margin: 15px 0; padding: 10px; background: #e3f2fd; border-radius: 8px; font-size: 0.9em; color: #1976d2; text-align: center;">
+                <div id="preloadContent">🎬 Video preloading in background...</div>
+            </div>
+            
+            <div class="debug-panel" id="systemDebug"></div>
+        </div>
+
+        <!-- Step 2: Camera Permission -->
+        <div class="step" id="step2">
+            <h1>📹 Camera Access</h1>
+            <h2>We need camera access to track emotions</h2>
+            <p>Your camera feed stays private and is only used for emotion analysis.</p>
+            
+            <!-- Privacy Policy Link -->
+            <div style="margin: 20px 0; padding: 15px; background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; text-align: center;">
+                <p style="margin: 0 0 10px 0; font-size: 0.9em; color: #666;">
+                    By continuing, you agree to our data collection practices.
+                </p>
+                <button onclick="showPrivacyPolicy()" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 0.9em;">
+                    📄 View Privacy Policy
+                </button>
+            </div>
+            
+            <button class="btn" id="allowCameraBtn">Allow Camera Access</button>
+            <div id="cameraStatus"></div>
+        </div>
+
+        <!-- Step 3: Face Detection -->
+        <div class="step" id="step3">
+            <h1>👤 Face Detection</h1>
+            <h2>Please position your face in the camera view</h2>
+            <p>We need to detect your face before starting the video task.</p>
+            
+            <!-- Face Detection Status -->
+            <div id="faceDetectionStatus" style="margin: 20px 0; padding: 20px; border-radius: 15px; background: #f8f9fa;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 15px;">
+                    <div id="faceIndicator" style="width: 60px; height: 60px; border-radius: 50%; background: #dc3545; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; transition: all 0.3s ease;">
+                        ❌
+                    </div>
+                    <div style="text-align: left;">
+                        <div id="faceStatusText" style="font-size: 1.2em; font-weight: bold; color: #dc3545;">No Face Detected</div>
+                        <div style="font-size: 0.9em; color: #666;">Please look directly at the camera</div>
+                    </div>
+                </div>
+                <div id="faceInstructions" style="text-align: center; color: #666; font-size: 0.9em;">
+                    <p>📱 Ensure good lighting and look directly at the camera</p>
+                    <p>🔍 Face detection status will update in real-time</p>
+                </div>
+            </div>
+            
+            <button class="btn" id="proceedToVideoBtn" disabled style="opacity: 0.5;">Face Detection Required</button>
+            <div id="faceDetectionDebug"></div>
+        </div>
+
+        <!-- Step 4: Video Playback -->
+        <div class="step" id="step4">
+            <h1>🎬 Video Task</h1>
+            <h2>Please watch the video carefully</h2>
+            
+            <!-- Sound Instructions -->
+            <div class="status warning" style="margin-bottom: 20px;">
+                <strong>🔊 Sound Required:</strong> Please ensure your device sound is turned ON. 
+                The video includes audio that's important for the study.
+            </div>
+            <div class="video-container">
+                <video id="videoPlayer" 
+                       preload="auto" 
+                       playsinline 
+                       webkit-playsinline
+                       controls="false"
+                       disableremoteplayback
+                       disablepictureinpicture
+                       controlslist="nodownload noplaybackrate nofullscreen noremoteplayback"
+                       oncontextmenu="return false;"
+                       onclick="return false;"
+                       ondblclick="return false;"
+                       ontouchstart="return false;"
+                       style="pointer-events: none; position: relative;">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- Overlay to prevent any video interaction -->
+                <div id="videoOverlay" style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.8);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-size: 1.2em;
+                    border-radius: 8px;
+                    z-index: 100;
+                    pointer-events: all;
+                    gap: 20px;
+                ">
+                    <div style="text-align: center; margin-bottom: 10px;">
+                        🎬 Ready to start emotion tracking<br>
+                        🔊 Make sure your sound is ON
+                    </div>
+                    <button id="startVideoBtn" style="
+                        background: linear-gradient(45deg, #667eea, #764ba2);
+                        color: white;
+                        border: none;
+                        padding: 15px 30px;
+                        font-size: 1.1em;
+                        border-radius: 25px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        font-weight: 600;
+                        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+                        min-width: 160px;
+                        -webkit-tap-highlight-color: transparent;
+                        user-select: none;
+                        outline: none;
+                    " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.6)'" 
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.4)'"
+                       ontouchstart="this.style.transform='translateY(-1px)'"
+                       ontouchend="this.style.transform='translateY(0)'">
+                        🚀 Start Video
+                    </button>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="videoProgress"></div>
+            </div>
+            <div id="videoStatus"></div>
+            
+            <!-- Real-time Emotion Data Display -->
+            <div id="emotionData" style="display: none; margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px; text-align: left; font-family: monospace; font-size: 0.9em;">
+                <h4 style="margin: 0 0 10px 0; text-align: center;">📊 Real-time Emotion Data</h4>
+                <div id="emotionDataContent"></div>
+            </div>
+        </div>
+
+        <!-- Step 5: Processing -->
+        <div class="step" id="step5">
+            <h1>⚙️ Processing</h1>
+            <h2>Processing your emotion data...</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="processingProgress"></div>
+            </div>
+            <div id="processingStatus"></div>
+        </div>
+
+        <!-- Step 6: Questionnaire -->
+        <div class="step" id="step6">
+            <h1>📝 Quick Questions</h1>
+            <h2>Please answer these final questions</h2>
+            <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+                <div style="margin-bottom: 25px;">
+                    <label for="question1" style="display: block; font-weight: bold; margin-bottom: 10px; color: #333;">
+                        1. What was the most memorable moment in the video?
+                    </label>
+                    <textarea id="question1" 
+                              style="width: 100%; height: 100px; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1em; resize: vertical; font-family: inherit;"
+                              placeholder="Please describe the most memorable moment from the video..."></textarea>
+                </div>
+                <div style="margin-bottom: 25px;">
+                    <label for="question2" style="display: block; font-weight: bold; margin-bottom: 10px; color: #333;">
+                        2. Would you give this game a chance to play?
+                    </label>
+                    <select id="question2" 
+                            style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1em; font-family: inherit; background: white; appearance: none; cursor: pointer;">
+                        <option value="">-- Please select an option --</option>
+                        <option value="yes absolutely">Yes absolutely</option>
+                        <option value="not sure">Not sure</option>
+                        <option value="definitely no">Definitely no</option>
+                    </select>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn" id="submitQuestionsBtn" style="background: #28a745; min-width: 200px;">
+                        Submit & Complete Task
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 7: Completion -->
+        <div class="step" id="step7">
+            <h1>✅ Task Complete</h1>
+            <h2>Thank you for participating!</h2>
+            <div class="completion-code" id="completionCode"></div>
+            <p style="font-size: 1.1em; margin: 20px 0; line-height: 1.6;">
+                <strong>Please copy this code and paste it into Clickworker to complete your task and receive payment.</strong>
+            </p>
+            <p style="color: #666; font-size: 0.9em; margin-top: 15px;">
+                You can now close this window and return to Clickworker.
+            </p>
+        </div>
+
+        <!-- Privacy Policy Modal -->
+        <div class="step" id="privacyPolicy" style="display: none;">
+            <h1>Privacy Policy for Emotion Tracking Service Using MorphCast SDK</h1>
+            <p><strong>Last Updated:</strong> July 4, 2025</p>
+
+            <p>We are committed to protecting your privacy and ensuring the security of the personal information you provide when using our Emotion Tracking Service, which utilizes the MorphCast SDK. This policy explains how we collect, use, and protect your data.</p>
+
+            <h2>1. Data Collection</h2>
+            <p>We only collect emotional and facial data via the MorphCast SDK for marketing purposes. <a href="https://www.morphcast.com/mission/#privacies" target="_blank">Check MorphCast privacy FAQ</a>.</p>
+            <p><strong>No videos or images of you are stored or shared</strong>. The data collected includes:</p>
+            <ul>
+                <li>Emotional reactions (such as facial expressions and emotions like happiness, surprise, etc.).</li>
+                <li>Attention and engagement levels.</li>
+                <li>Valence and arousal information, which measure the intensity of your emotional state.</li>
+            </ul>
+            <p>This data is collected in real-time while you watch our video content but is not stored in any video or image form.</p>
+
+            <h2>2. Purpose of Data Collection</h2>
+            <p>The data collected by MorphCast is used solely for marketing purposes, helping us better understand user reactions to our video content to improve our marketing strategies. We do not use this data to personally identify users or store any personally identifiable information (PII).</p>
+
+            <h2>3. No Storage of Videos</h2>
+            <p>Our service does <strong>not</strong> record or store any video or image of you. The MorphCast SDK processes the data directly from your camera and only transmits emotional analysis data.</p>
+
+            <h2>4. Data Security</h2>
+            <p>We take your privacy seriously and implement industry-standard measures to secure the emotional data collected. Your data is processed in a GDPR-compliant manner. We do not share this data with third parties unless required by law.</p>
+
+            <h2>5. Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access the data collected about you.</li>
+                <li>Request the deletion of the data.</li>
+                <li>Withdraw your consent at any time, after which the service will no longer collect data.</li>
+            </ul>
+            <p>If you wish to exercise any of these rights or have any questions regarding your privacy, please contact us at support@emotiontracking.com.</p>
+
+            <h2>6. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, with an updated "Last Updated" date.</p>
+
+            <div class="backlink" style="text-align: center; margin-top: 30px;">
+                <button class="btn" onclick="goBack()">Back to Previous Page</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== CONFIGURATION ====================
+        const CONFIG = {
+            VIDEO_URL: 'https://assets.homa-cloud.com/cm0wqgm1d002gdslcdl3hq3yl/f4bea092-1f69-4f99-8d7a-fc8fb52ac610/CAY_R91_V1_WW_VID_1080x1920_24s.mp4',
+            TASK_ID: 'TASK-CLEAN',
+            COMPLETION_CODE: 'CLEAN123',
+            MORPHCAST_LICENSE: 'ap95c1923492e8512306644ca7fea0e66e7c27a47b97bb',
+            // Updated Supabase URL - correct working credentials
+            SUPABASE_URL: 'https://nxlyelvtfphybhyfhxwc.supabase.co',
+            SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54bHllbHZ0ZnBoeWJoeWZoeHdjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MTYyNzgxOSwiZXhwIjoyMDY3MjAzODE5fQ.8F-la271rAdg-kPuxEySLUDaKyqNItrsoOzwoWWjnbw',
+            SUPABASE_STORAGE_BUCKET: 'cay250704',
+            SUPABASE_TABLE: 'emotion_tracking_data',
+            VIDEO_DURATION: 24,
+            TIMELINE_DURATION: 30
+        };
+
+        // ==================== GLOBAL VARIABLES ====================
+        let emotionTracker = null;
+        let supabaseClient = null;
+        let morphcastWindow = null;
+        let trackingData = [];
+        let videoStartTime = null;
+        let currentStep = 1;
+        let systemChecks = {
+            morphcast: false,
+            supabase: false,
+            video: false,
+            camera: false
+        };
+        
+        // Real-time emotion data display
+        let currentEmotionData = {
+            arousal: 0,
+            valence: 0,
+            attention: 0,
+            dominantEmotion: 'neutral',
+            faceDetected: false,
+            lastUpdate: null
+        };
+        
+        // Store processed data for download
+        let processedReportData = null;
+        
+        // Face detection validation
+        let faceDetectionWindow = null;
+        let faceDetectionActive = false;
+        let lastFaceDetected = false;
+        let faceDetectionStartTime = null;
+
+        // ==================== UTILITY FUNCTIONS ====================
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const emoji = {
+                'info': 'ℹ️',
+                'success': '✅',
+                'warning': '⚠️',
+                'error': '❌',
+                'debug': '🔧'
+            }[type] || 'ℹ️';
+            
+            console.log(`${emoji} [${timestamp}] ${message}`);
+            
+            // Add to debug panel if visible
+            const debugPanel = document.getElementById('systemDebug');
+            if (debugPanel) {
+                const entry = document.createElement('div');
+                entry.className = 'debug-entry';
+                entry.innerHTML = `<strong>[${timestamp}]</strong> ${emoji} ${message}`;
+                debugPanel.appendChild(entry);
+                debugPanel.scrollTop = debugPanel.scrollHeight;
+            }
+        }
+
+        function showStatus(elementId, message, type = 'info') {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.innerHTML = `<div class="status ${type}">${message}</div>`;
+            }
+        }
+        
+        function showDebugStatus(elementId, message, type = 'info') {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.innerHTML = `<div style="padding: 10px; margin: 10px 0; border-radius: 8px; font-size: 0.9em; background: ${type === 'success' ? '#d4edda' : type === 'error' ? '#f8d7da' : '#d1ecf1'}; color: ${type === 'success' ? '#155724' : type === 'error' ? '#721c24' : '#0c5460'};">${message}</div>`;
+            }
+        }
+
+        function updateProgress(elementId, percentage) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.style.width = `${percentage}%`;
+            }
+        }
+
+        function showStep(stepNumber) {
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+                step.style.display = 'none';
+            });
+            
+            const targetStep = document.getElementById(`step${stepNumber}`);
+            if (targetStep) {
+                targetStep.classList.add('active');
+                targetStep.style.display = 'block';
+                currentStep = stepNumber;
+                log(`Showing step ${stepNumber}`, 'info');
+            }
+        }
+
+        function generateWorkerId() {
+            return 'worker_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        function generateUserId() {
+            // Generate a simple numeric user ID
+            return Math.floor(Math.random() * 100000) + 1;
+        }
+        
+        function updateFaceDetectionDisplay(faceDetected, totalFaces = 0) {
+            const faceIndicator = document.getElementById('faceIndicator');
+            const faceStatusText = document.getElementById('faceStatusText');
+            const proceedBtn = document.getElementById('proceedToVideoBtn');
+            
+            if (faceDetected) {
+                faceIndicator.style.background = '#28a745';
+                faceIndicator.innerHTML = '✅';
+                faceStatusText.textContent = `Face Detected (${totalFaces})`;
+                faceStatusText.style.color = '#28a745';
+                proceedBtn.disabled = false;
+                proceedBtn.style.opacity = '1';
+                proceedBtn.textContent = 'Start Video Task';
+            } else {
+                faceIndicator.style.background = '#dc3545';
+                faceIndicator.innerHTML = '❌';
+                faceStatusText.textContent = 'No Face Detected';
+                faceStatusText.style.color = '#dc3545';
+                proceedBtn.disabled = true;
+                proceedBtn.style.opacity = '0.5';
+                proceedBtn.textContent = 'Face Detection Required';
+            }
+            
+            lastFaceDetected = faceDetected;
+        }
+        
+        async function startFaceDetection() {
+            try {
+                log('Starting face detection validation...', 'info');
+                faceDetectionActive = true;
+                faceDetectionStartTime = Date.now();
+                
+                // Initialize Morphcast for face detection
+                faceDetectionWindow = await CY.loader()
+                    .licenseKey(CONFIG.MORPHCAST_LICENSE)
+                    .addModule(CY.modules().FACE_DETECTOR.name, { maxInputFrameSize: 320, smoothness: 0.83 })
+                    .load();
+                
+                log('Face detection initialized', 'success');
+                
+                // Set up face detection event listener
+                window.addEventListener(CY.modules().FACE_DETECTOR.eventName, handleFaceDetectionValidation);
+                
+                // Start face detection
+                await faceDetectionWindow.start();
+                
+                log('Face detection started - please look at the camera', 'info');
+                
+            } catch (error) {
+                log(`Face detection initialization failed: ${error.message}`, 'error');
+                showDebugStatus('faceDetectionDebug', `Face detection error: ${error.message}`, 'error');
+                
+                // Allow proceeding even if face detection fails
+                setTimeout(() => {
+                    updateFaceDetectionDisplay(true, 1);
+                    log('Face detection bypassed due to error', 'warning');
+                }, 2000);
+            }
+        }
+        
+        function handleFaceDetectionValidation(evt) {
+            if (!faceDetectionActive) return;
+            
+            const faceDetected = evt.detail.totalFaces > 0;
+            const totalFaces = evt.detail.totalFaces;
+            
+            // Update display
+            updateFaceDetectionDisplay(faceDetected, totalFaces);
+            
+            // Log face detection changes
+            if (faceDetected !== lastFaceDetected) {
+                log(`Face detection: ${faceDetected ? 'DETECTED' : 'LOST'} (${totalFaces} faces)`, faceDetected ? 'success' : 'warning');
+            }
+            
+            // Debug logging every 2 seconds
+            const now = Date.now();
+            if (faceDetectionStartTime && (now - faceDetectionStartTime) % 2000 < 100) {
+                const elapsed = ((now - faceDetectionStartTime) / 1000).toFixed(1);
+                showDebugStatus('faceDetectionDebug', `Face Detection: ${faceDetected ? '✅' : '❌'} | Faces: ${totalFaces} | Time: ${elapsed}s`, faceDetected ? 'success' : 'info');
+            }
+        }
+        
+        async function proceedToVideo() {
+            try {
+                log('Face detected, proceeding to video...', 'success');
+                
+                // Stop face detection
+                faceDetectionActive = false;
+                if (faceDetectionWindow) {
+                    await faceDetectionWindow.stop();
+                    window.removeEventListener(CY.modules().FACE_DETECTOR.eventName, handleFaceDetectionValidation);
+                    
+                    // Add delay to ensure complete cleanup
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    faceDetectionWindow = null;
+                    
+                    log('Face detection validation stopped and cleaned up', 'debug');
+                }
+                
+                // Move to video step
+                setupVideo();
+                showStep(4);
+                
+            } catch (error) {
+                log(`Error proceeding to video: ${error.message}`, 'error');
+            }
+        }
+        
+        function updateEmotionDisplay() {
+            const emotionDataDiv = document.getElementById('emotionData');
+            const emotionDataContent = document.getElementById('emotionDataContent');
+            
+            if (!emotionDataDiv || !emotionDataContent) return;
+            
+            // Show the emotion data display
+            emotionDataDiv.style.display = 'block';
+            
+            const timestamp = new Date().toLocaleTimeString();
+            const videoTime = document.getElementById('videoPlayer').currentTime.toFixed(1);
+            
+            const html = `
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                    <div><strong>Video Time:</strong> ${videoTime}s</div>
+                    <div><strong>Last Update:</strong> ${timestamp}</div>
+                    <div><strong>Face Detected:</strong> ${currentEmotionData.faceDetected ? '✅ Yes' : '❌ No'}</div>
+                    <div><strong>Data Points:</strong> ${trackingData.length}</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                    <div><strong>Arousal:</strong> <span style="color: ${currentEmotionData.arousal > 0 ? 'green' : 'red'}">${currentEmotionData.arousal.toFixed(3)}</span></div>
+                    <div><strong>Valence:</strong> <span style="color: ${currentEmotionData.valence > 0 ? 'green' : 'red'}">${currentEmotionData.valence.toFixed(3)}</span></div>
+                    <div><strong>Attention:</strong> <span style="color: ${currentEmotionData.attention > 0.5 ? 'green' : 'orange'}">${currentEmotionData.attention.toFixed(3)}</span></div>
+                </div>
+                <div style="text-align: center; margin-top: 10px;">
+                    <strong>Dominant Emotion:</strong> 
+                    <span style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">
+                        ${currentEmotionData.dominantEmotion || 'neutral'}
+                    </span>
+                </div>
+            `;
+            
+            emotionDataContent.innerHTML = html;
+        }
+
+        // ==================== SYSTEM INITIALIZATION ====================
+        async function initializeSystem() {
+            log('Starting system initialization...', 'info');
+            updateProgress('systemProgress', 10);
+
+            // Check 1: Morphcast SDK
+            try {
+                log('Checking Morphcast SDK availability...', 'debug');
+                await loadMorphcastSDK();
+                systemChecks.morphcast = true;
+                log('Morphcast SDK loaded successfully', 'success');
+                updateProgress('systemProgress', 30);
+            } catch (error) {
+                log(`Morphcast SDK failed: ${error.message}`, 'error');
+                showStatus('systemStatus', `Morphcast SDK Error: ${error.message}`, 'error');
+                return false;
+            }
+
+            // Check 2: Supabase
+            try {
+                log('Initializing Supabase client...', 'debug');
+                await initializeSupabase();
+                systemChecks.supabase = true;
+                log('Supabase client initialized successfully', 'success');
+                updateProgress('systemProgress', 50);
+            } catch (error) {
+                log(`Supabase initialization failed: ${error.message}`, 'error');
+                showStatus('systemStatus', `Supabase Error: ${error.message}`, 'error');
+                return false;
+            }
+
+            // Check 3: Video
+            try {
+                log('Testing video loading...', 'debug');
+                await testVideoLoading();
+                systemChecks.video = true;
+                log('Video loading test successful', 'success');
+                updateProgress('systemProgress', 70);
+            } catch (error) {
+                log(`Video loading failed: ${error.message}`, 'error');
+                showStatus('systemStatus', `Video Error: ${error.message}`, 'error');
+                return false;
+            }
+
+            // Check 4: Camera capability
+            try {
+                log('Checking camera availability...', 'debug');
+                await checkCameraCapability();
+                systemChecks.camera = true;
+                log('Camera capability confirmed', 'success');
+                updateProgress('systemProgress', 90);
+            } catch (error) {
+                log(`Camera check failed: ${error.message}`, 'error');
+                showStatus('systemStatus', `Camera Error: ${error.message}`, 'error');
+                return false;
+            }
+
+            updateProgress('systemProgress', 100);
+            showStatus('systemStatus', 'All system checks passed! Ready to proceed.', 'success');
+            
+            setTimeout(() => {
+                log('System initialization complete', 'success');
+                showStep(2);
+            }, 1000);
+
+            return true;
+        }
+
+        async function loadMorphcastSDK() {
+            return new Promise((resolve, reject) => {
+                if (window.CY && window.CY.loader) {
+                    log('Morphcast SDK already loaded', 'debug');
+                    resolve();
+                    return;
+                }
+
+                const script = document.createElement('script');
+                script.src = `https://ai-sdk.morphcast.com/v1.16/ai-sdk.js?t=${Date.now()}`;
+                script.onload = () => {
+                    log('Morphcast SDK script loaded', 'debug');
+                    // Wait for SDK to initialize
+                    setTimeout(() => {
+                        if (window.CY && window.CY.loader) {
+                            log('Morphcast SDK initialized', 'debug');
+                            resolve();
+                        } else {
+                            reject(new Error('SDK loaded but CY.loader not available'));
+                        }
+                    }, 1000);
+                };
+                script.onerror = () => {
+                    reject(new Error('Failed to load Morphcast SDK script'));
+                };
+                document.head.appendChild(script);
+            });
+        }
+
+        async function initializeSupabase() {
+            return new Promise((resolve, reject) => {
+                if (window.supabase) {
+                    log('Supabase already loaded', 'debug');
+                    supabaseClient = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_KEY);
+                    resolve();
+                    return;
+                }
+
+                const script = document.createElement('script');
+                script.src = 'https://unpkg.com/@supabase/supabase-js@2';
+                script.onload = () => {
+                    log('Supabase script loaded', 'debug');
+                    if (window.supabase) {
+                        supabaseClient = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_KEY);
+                        log('Supabase client created', 'debug');
+                        resolve();
+                    } else {
+                        reject(new Error('Supabase script loaded but window.supabase not available'));
+                    }
+                };
+                script.onerror = () => {
+                    reject(new Error('Failed to load Supabase script'));
+                };
+                document.head.appendChild(script);
+            });
+        }
+
+        async function testVideoLoading() {
+            return new Promise((resolve, reject) => {
+                // Show preload status
+                const preloadStatus = document.getElementById('preloadStatus');
+                const preloadContent = document.getElementById('preloadContent');
+                if (preloadStatus) {
+                    preloadStatus.style.display = 'block';
+                    preloadContent.textContent = '🎬 Video preloading in background...';
+                }
+                
+                const video = document.createElement('video');
+                video.muted = false;
+                video.volume = 0.8; // Set volume to 80%
+                video.preload = 'auto'; // Changed to 'auto' for better preloading
+                
+                video.onloadedmetadata = () => {
+                    log(`Video metadata loaded: ${video.duration}s`, 'debug');
+                    
+                    // Start buffering the actual video element too
+                    const mainVideo = document.getElementById('videoPlayer');
+                    if (mainVideo) {
+                        mainVideo.src = CONFIG.VIDEO_URL;
+                        mainVideo.preload = 'auto';
+                        mainVideo.muted = false;
+                        mainVideo.volume = 0.8; // Set volume to 80%
+                        mainVideo.load();
+                        log('Main video started preloading with sound enabled', 'debug');
+                        
+                        // Update preload status
+                        if (preloadContent) {
+                            preloadContent.textContent = '🎬 Video loaded, buffering for smooth playback...';
+                        }
+                    }
+                    
+                    resolve();
+                };
+                
+                video.oncanplaythrough = () => {
+                    log('Video can play through (fully buffered)', 'debug');
+                    if (preloadContent) {
+                        preloadContent.textContent = '✅ Video fully buffered and ready!';
+                    }
+                };
+                
+                video.onerror = () => {
+                    if (preloadContent) {
+                        preloadContent.textContent = '❌ Video failed to load';
+                    }
+                    reject(new Error('Video failed to load'));
+                };
+                
+                video.src = CONFIG.VIDEO_URL;
+                
+                // Timeout after 15 seconds (increased)
+                setTimeout(() => {
+                    if (preloadContent) {
+                        preloadContent.textContent = '⏰ Video loading timeout';
+                    }
+                    reject(new Error('Video loading timeout'));
+                }, 15000);
+            });
+        }
+
+        async function checkCameraCapability() {
+            return new Promise((resolve, reject) => {
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                    reject(new Error('Camera not supported by browser'));
+                    return;
+                }
+                
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(stream => {
+                        log('Camera access test successful', 'debug');
+                        // Stop the test stream
+                        stream.getTracks().forEach(track => track.stop());
+                        resolve();
+                    })
+                    .catch(error => {
+                        reject(new Error(`Camera access failed: ${error.message}`));
+                    });
+            });
+        }
+
+        // ==================== CAMERA HANDLING ====================
+        async function requestCameraAccess() {
+            try {
+                log('Requesting camera access...', 'info');
+                showStatus('cameraStatus', 'Requesting camera permission...', 'info');
+                
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                log('Camera access granted', 'success');
+                
+                // Stop the stream immediately - we just needed permission
+                stream.getTracks().forEach(track => track.stop());
+                
+                showStatus('cameraStatus', 'Camera access granted successfully!', 'success');
+                
+                setTimeout(() => {
+                    log('Moving to face detection step', 'info');
+                    showStep(3);
+                    startFaceDetection();
+                }, 1000);
+                
+            } catch (error) {
+                log(`Camera access failed: ${error.message}`, 'error');
+                showStatus('cameraStatus', `Camera access failed: ${error.message}`, 'error');
+            }
+        }
+
+        // ==================== VIDEO HANDLING ====================
+        function setupVideo() {
+            const video = document.getElementById('videoPlayer');
+            const startBtn = document.getElementById('startVideoBtn');
+            
+            log('Setting up video player...', 'debug');
+            
+            // Video should already be preloaded from system initialization
+            if (!video.src) {
+                video.src = CONFIG.VIDEO_URL;
+                video.preload = 'auto';
+                video.muted = false;
+                video.volume = 0.8; // Set volume to 80%
+                video.load();
+                log('Video source set and loading started with sound enabled', 'debug');
+            } else {
+                // Ensure sound is enabled even if video was preloaded
+                video.muted = false;
+                video.volume = 0.8; // Set volume to 80%
+                log('Video already preloaded, sound enabled', 'debug');
+            }
+            
+            // Prevent video from playing unless started through our button
+            let videoAllowedToPlay = false;
+            
+            const preventUnauthorizedPlay = (event) => {
+                if (!videoAllowedToPlay) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    video.pause();
+                    log('Unauthorized video play attempt blocked', 'warning');
+                    return false;
+                }
+            };
+            
+            video.addEventListener('play', preventUnauthorizedPlay);
+            video.addEventListener('playing', preventUnauthorizedPlay);
+            
+            // Store reference to allow play when button is clicked
+            window.allowVideoPlay = () => {
+                videoAllowedToPlay = true;
+                video.removeEventListener('play', preventUnauthorizedPlay);
+                video.removeEventListener('playing', preventUnauthorizedPlay);
+            };
+            
+            // Video event listeners
+            video.onloadedmetadata = () => {
+                log(`Video metadata loaded: ${video.duration}s`, 'debug');
+                showStatus('videoStatus', 'Video loaded successfully', 'success');
+                startBtn.disabled = false;
+            };
+            
+            video.onloadeddata = () => {
+                log('Video data loaded', 'debug');
+            };
+            
+            video.oncanplay = () => {
+                log('Video can play', 'debug');
+            };
+            
+            video.oncanplaythrough = () => {
+                log('Video can play through (fully buffered)', 'success');
+                showStatus('videoStatus', 'Video ready to play', 'success');
+            };
+            
+            video.ontimeupdate = () => {
+                if (video.duration > 0) {
+                    const progress = (video.currentTime / video.duration) * 100;
+                    updateProgress('videoProgress', progress);
+                }
+            };
+            
+            // Critical: Pause emotion tracking when video pauses
+            video.onpause = () => {
+                log('Video paused - pausing emotion tracking', 'warning');
+                if (morphcastWindow && videoStartTime) {
+                    try {
+                        morphcastWindow.pause();
+                        log('Emotion tracking paused', 'debug');
+                    } catch (error) {
+                        log(`Error pausing emotion tracking: ${error.message}`, 'warning');
+                    }
+                }
+                showStatus('videoStatus', 'Video paused', 'warning');
+            };
+            
+            // Critical: Resume emotion tracking when video resumes
+            video.onplay = () => {
+                log('Video resumed - resuming emotion tracking', 'success');
+                if (morphcastWindow && videoStartTime) {
+                    try {
+                        morphcastWindow.resume();
+                        log('Emotion tracking resumed', 'debug');
+                    } catch (error) {
+                        log(`Error resuming emotion tracking: ${error.message}`, 'warning');
+                    }
+                }
+            };
+            
+            video.onended = () => {
+                log('Video playback ended', 'success');
+                showStatus('videoStatus', 'Video completed successfully!', 'success');
+                
+                // Exit fullscreen when video ends
+                exitFullscreen();
+                
+                // Clean up event listeners
+                cleanupVideoEventListeners();
+                
+                setTimeout(() => {
+                    processEmotionData();
+                }, 1000);
+            };
+            
+            video.onerror = () => {
+                log(`Video error: ${video.error?.message || 'Unknown error'}`, 'error');
+                showStatus('videoStatus', `Video error: ${video.error?.message || 'Unknown error'}`, 'error');
+            };
+            
+            video.onstalled = () => {
+                log('Video stalled', 'warning');
+                showStatus('videoStatus', 'Video loading... Please wait.', 'warning');
+            };
+            
+            video.onwaiting = () => {
+                log('Video waiting for data', 'warning');
+                showStatus('videoStatus', 'Buffering... Please wait.', 'warning');
+                
+                // Pause emotion tracking during buffering
+                if (morphcastWindow && videoStartTime) {
+                    try {
+                        morphcastWindow.pause();
+                        log('Emotion tracking paused due to buffering', 'debug');
+                    } catch (error) {
+                        log(`Error pausing during buffering: ${error.message}`, 'warning');
+                    }
+                }
+            };
+            
+            video.onplaying = () => {
+                log('Video playing', 'success');
+                showStatus('videoStatus', 'Video playing successfully', 'success');
+                
+                // Resume emotion tracking when video plays
+                if (morphcastWindow && videoStartTime) {
+                    try {
+                        morphcastWindow.resume();
+                        log('Emotion tracking resumed after buffering', 'debug');
+                    } catch (error) {
+                        log(`Error resuming after buffering: ${error.message}`, 'warning');
+                    }
+                }
+            };
+            
+            video.onseeking = () => {
+                log('Video seeking', 'debug');
+            };
+            
+            video.onseeked = () => {
+                log('Video seek completed', 'debug');
+            };
+        }
+
+        async function startVideo() {
+            const video = document.getElementById('videoPlayer');
+            const startBtn = document.getElementById('startVideoBtn');
+            const videoOverlay = document.getElementById('videoOverlay');
+            
+            try {
+                log('Starting video playback...', 'info');
+                
+                // Disable button and show loading state
+                if (startBtn) {
+                    startBtn.disabled = true;
+                    startBtn.innerHTML = '⏳ Starting...';
+                    startBtn.style.opacity = '0.7';
+                    startBtn.style.cursor = 'not-allowed';
+                }
+                
+                showStatus('videoStatus', 'Starting video...', 'info');
+                
+                // Allow video to play through our controlled process
+                if (window.allowVideoPlay) {
+                    window.allowVideoPlay();
+                }
+                
+                // Initialize emotion tracking
+                await initializeEmotionTracking();
+                
+                // Remove the video overlay to show the actual video
+                if (videoOverlay) {
+                    videoOverlay.style.display = 'none';
+                }
+                
+                // Enable video interactions only when starting properly
+                video.style.pointerEvents = 'auto';
+                
+                // Enter fullscreen mode before starting video
+                await enterFullscreen(video);
+                
+                // Disable video controls and prevent seeking
+                video.controls = false;
+                video.addEventListener('seeking', preventSeeking);
+                video.addEventListener('seeked', preventSeeking);
+                video.addEventListener('contextmenu', preventRightClick);
+                
+                // Add mobile-specific touch event prevention
+                video.addEventListener('touchstart', preventTouch);
+                video.addEventListener('touchmove', preventTouch);
+                video.addEventListener('touchend', preventTouch);
+                
+                // Prevent keyboard shortcuts
+                document.addEventListener('keydown', preventKeyboardShortcuts);
+                
+                // Start video
+                await video.play();
+                videoStartTime = Date.now();
+                
+                // Show real-time emotion data
+                document.getElementById('emotionData').style.display = 'block';
+                
+                log('Video started successfully in fullscreen', 'success');
+                showStatus('videoStatus', 'Video playing - emotion tracking active', 'success');
+                
+            } catch (error) {
+                log(`Video start failed: ${error.message}`, 'error');
+                showStatus('videoStatus', `Failed to start video: ${error.message}`, 'error');
+                
+                // Restore button state on error
+                if (startBtn) {
+                    startBtn.disabled = false;
+                    startBtn.innerHTML = '🚀 Start Video';
+                    startBtn.style.opacity = '1';
+                    startBtn.style.cursor = 'pointer';
+                }
+                
+                // Re-enable overlay on error
+                if (videoOverlay) {
+                    videoOverlay.style.display = 'flex';
+                }
+                video.style.pointerEvents = 'none';
+            }
+        }
+        
+        // Fullscreen functionality
+        async function enterFullscreen(element) {
+            try {
+                if (element.requestFullscreen) {
+                    await element.requestFullscreen();
+                } else if (element.webkitRequestFullscreen) {
+                    await element.webkitRequestFullscreen();
+                } else if (element.mozRequestFullScreen) {
+                    await element.mozRequestFullScreen();
+                } else if (element.msRequestFullscreen) {
+                    await element.msRequestFullscreen();
+                }
+                
+                // Mobile-specific fullscreen for iOS Safari
+                if (element.webkitEnterFullscreen) {
+                    element.webkitEnterFullscreen();
+                }
+                
+                log('Entered fullscreen mode', 'debug');
+                
+            } catch (error) {
+                log(`Fullscreen error: ${error.message}`, 'warning');
+                // Continue without fullscreen if it fails
+            }
+        }
+        
+        // Prevent video seeking/skipping
+        function preventSeeking(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            log('Seeking prevented', 'debug');
+            
+            // Reset video to current time to prevent seeking
+            const video = event.target;
+            if (video.currentTime !== video.currentTime) {
+                video.currentTime = video.currentTime;
+            }
+            
+            return false;
+        }
+        
+        // Prevent right-click context menu
+        function preventRightClick(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        }
+        
+        // Prevent touch interactions that could interfere with video
+        function preventTouch(event) {
+            // Allow single touch for mobile interaction but prevent complex gestures
+            if (event.touches && event.touches.length > 1) {
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            }
+        }
+        
+        // Prevent keyboard shortcuts that could interfere with video
+        function preventKeyboardShortcuts(event) {
+            const preventedKeys = [
+                'Space', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown',
+                'Home', 'End', 'PageUp', 'PageDown', 'Escape'
+            ];
+            
+            if (preventedKeys.includes(event.code) || 
+                (event.ctrlKey && ['KeyF', 'KeyR', 'KeyW'].includes(event.code))) {
+                event.preventDefault();
+                event.stopPropagation();
+                log('Keyboard shortcut prevented', 'debug');
+                return false;
+            }
+        }
+        
+        // Exit fullscreen
+        function exitFullscreen() {
+            try {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                
+                log('Exited fullscreen mode', 'debug');
+                
+            } catch (error) {
+                log(`Exit fullscreen error: ${error.message}`, 'warning');
+            }
+        }
+        
+        // Clean up video event listeners
+        function cleanupVideoEventListeners() {
+            const video = document.getElementById('videoPlayer');
+            
+            if (video) {
+                video.removeEventListener('seeking', preventSeeking);
+                video.removeEventListener('seeked', preventSeeking);
+                video.removeEventListener('contextmenu', preventRightClick);
+                video.removeEventListener('touchstart', preventTouch);
+                video.removeEventListener('touchmove', preventTouch);
+                video.removeEventListener('touchend', preventTouch);
+            }
+            
+            document.removeEventListener('keydown', preventKeyboardShortcuts);
+            
+            log('Video event listeners cleaned up', 'debug');
+        }
+
+        // ==================== EMOTION TRACKING ====================
+        async function initializeEmotionTracking() {
+            try {
+                log('Initializing emotion tracking...', 'debug');
+                
+                if (!window.CY || !window.CY.loader) {
+                    throw new Error('Morphcast SDK not available');
+                }
+                
+                // Clear any existing instances first
+                if (morphcastWindow) {
+                    try {
+                        await morphcastWindow.stop();
+                        log('Stopped existing Morphcast instance', 'debug');
+                    } catch (error) {
+                        log(`Error stopping existing instance: ${error.message}`, 'warning');
+                    }
+                    morphcastWindow = null;
+                }
+                
+                // Add additional delay to ensure complete cleanup
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                log('Setting up Morphcast event listeners...', 'debug');
+                
+                // Set up event listeners for tracking data
+                window.addEventListener(CY.modules().FACE_AROUSAL_VALENCE.eventName, (evt) => {
+                    if (!videoStartTime) return;
+                    
+                    const currentTime = Date.now();
+                    
+                    const dataPoint = {
+                        mediaTime: document.getElementById('videoPlayer').currentTime,
+                        type: 'FACE_AROUSAL_VALENCE',
+                        valence: evt.detail.output.valence,
+                        arousal: evt.detail.output.arousal
+                    };
+                    
+                    trackingData.push(dataPoint);
+                    
+                    // Update real-time display
+                    currentEmotionData.arousal = evt.detail.output.arousal;
+                    currentEmotionData.valence = evt.detail.output.valence;
+                    currentEmotionData.faceDetected = true;
+                    currentEmotionData.lastUpdate = currentTime;
+                    
+                    // Log every 50 data points with current values
+                    if (trackingData.length % 50 === 0) {
+                        log(`📊 Data: ${trackingData.length} points | Arousal: ${evt.detail.output.arousal.toFixed(3)} | Valence: ${evt.detail.output.valence.toFixed(3)}`, 'debug');
+                        updateEmotionDisplay();
+                    }
+                });
+
+                window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
+                    if (!videoStartTime) return;
+                    
+                    const currentTime = Date.now();
+                    
+                    const dataPoint = {
+                        mediaTime: document.getElementById('videoPlayer').currentTime,
+                        type: 'FACE_EMOTION',
+                        dominantEmotion: evt.detail.output.dominantEmotion,
+                        emotions: evt.detail.output.emotion
+                    };
+                    
+                    trackingData.push(dataPoint);
+                    
+                    // Update real-time display
+                    currentEmotionData.dominantEmotion = evt.detail.output.dominantEmotion;
+                    currentEmotionData.faceDetected = true;
+                    currentEmotionData.lastUpdate = currentTime;
+                    
+                    // Log emotion changes
+                    if (trackingData.length % 25 === 0) {
+                        log(`😊 Emotion: ${evt.detail.output.dominantEmotion} | Total: ${trackingData.length}`, 'debug');
+                        updateEmotionDisplay();
+                    }
+                });
+
+                window.addEventListener(CY.modules().FACE_ATTENTION.eventName, (evt) => {
+                    if (!videoStartTime) return;
+                    
+                    const currentTime = Date.now();
+                    
+                    const dataPoint = {
+                        mediaTime: document.getElementById('videoPlayer').currentTime,
+                        type: 'FACE_ATTENTION',
+                        attention: evt.detail.output.attention
+                    };
+                    
+                    trackingData.push(dataPoint);
+                    
+                    // Update real-time display
+                    currentEmotionData.attention = evt.detail.output.attention;
+                    currentEmotionData.faceDetected = true;
+                    currentEmotionData.lastUpdate = currentTime;
+                    
+                    // Log attention updates
+                    if (trackingData.length % 75 === 0) {
+                        log(`👀 Attention: ${evt.detail.output.attention.toFixed(3)} | Total: ${trackingData.length}`, 'debug');
+                        updateEmotionDisplay();
+                    }
+                });
+
+                window.addEventListener(CY.modules().FACE_DETECTOR.eventName, (evt) => {
+                    if (!videoStartTime) return;
+                    
+                    const currentTime = Date.now();
+                    
+                    const dataPoint = {
+                        mediaTime: document.getElementById('videoPlayer').currentTime,
+                        type: 'FACE_DETECTOR',
+                        totalFaces: evt.detail.totalFaces,
+                        status: evt.detail.status
+                    };
+                    
+                    trackingData.push(dataPoint);
+                    
+                    // Update face detection status
+                    currentEmotionData.faceDetected = evt.detail.totalFaces > 0;
+                    currentEmotionData.lastUpdate = currentTime;
+                    
+                    // Log face detection changes
+                    if (trackingData.length % 100 === 0) {
+                        log(`👤 Face Detection: ${evt.detail.totalFaces > 0 ? 'Yes' : 'No'} | Total: ${trackingData.length}`, 'debug');
+                        updateEmotionDisplay();
+                    }
+                });
+                
+                log('Event listeners set up successfully', 'debug');
+                
+                // Initialize Morphcast with correct API
+                log('Loading Morphcast modules...', 'debug');
+                
+                morphcastWindow = await CY.loader()
+                    .licenseKey(CONFIG.MORPHCAST_LICENSE)
+                    .addModule(CY.modules().FACE_AROUSAL_VALENCE.name, { smoothness: 0.70 })
+                    .addModule(CY.modules().FACE_EMOTION.name, { smoothness: 0.40 })
+                    .addModule(CY.modules().FACE_ATTENTION.name, { smoothness: 0.83 })
+                    .addModule(CY.modules().FACE_DETECTOR.name, { maxInputFrameSize: 320, smoothness: 0.83 })
+                    .addModule(CY.modules().ALARM_NO_FACE.name, { timeWindowMs: 10000, initialToleranceMs: 7000, threshold: 0.75 })
+                    .addModule(CY.modules().DATA_AGGREGATOR.name, { initialWaitMs: 2000, periodMs: 1000 })
+                    .load();
+                
+                log('Morphcast modules loaded successfully', 'success');
+                
+                // Start tracking
+                await morphcastWindow.start();
+                
+                // Set up periodic display updates
+                const displayUpdateInterval = setInterval(() => {
+                    if (videoStartTime && !document.getElementById('videoPlayer').paused) {
+                        updateEmotionDisplay();
+                    }
+                }, 2000); // Update every 2 seconds
+                
+                // Store interval reference for cleanup
+                morphcastWindow.displayUpdateInterval = displayUpdateInterval;
+                
+                log('Emotion tracking started successfully', 'success');
+                
+            } catch (error) {
+                log(`Emotion tracking initialization failed: ${error.message}`, 'error');
+                throw error;
+            }
+        }
+
+        // ==================== DATA PROCESSING ====================
+        async function processEmotionData() {
+            showStep(5);
+            
+            try {
+                log('Processing emotion data...', 'info');
+                showStatus('processingStatus', 'Processing emotion data...', 'info');
+                updateProgress('processingProgress', 20);
+                
+                if (trackingData.length === 0) {
+                    throw new Error('No tracking data collected');
+                }
+                
+                log(`Processing ${trackingData.length} data points`, 'debug');
+                
+                // Generate worker ID
+                const workerId = generateWorkerId();
+                
+                // Prepare data for storage
+                const reportData = {
+                    workerId: workerId,
+                    taskId: CONFIG.TASK_ID,
+                    timestamp: Date.now(),
+                    videoUrl: CONFIG.VIDEO_URL,
+                    videoDuration: CONFIG.VIDEO_DURATION,
+                    trackingData: trackingData,
+                    summary: generateSummary(trackingData)
+                };
+                
+                // Store for download
+                processedReportData = reportData;
+                
+                updateProgress('processingProgress', 50);
+                
+                // Data processing complete, proceed to questionnaire
+                updateProgress('processingProgress', 80);
+                log('Data processing completed, proceeding to questionnaire', 'info');
+                
+                // Clean up
+                if (morphcastWindow) {
+                    await morphcastWindow.stop();
+                    
+                    // Stop display update interval
+                    if (morphcastWindow.displayUpdateInterval) {
+                        clearInterval(morphcastWindow.displayUpdateInterval);
+                        log('Display update interval stopped', 'debug');
+                    }
+                    
+                    log('Morphcast tracking stopped', 'debug');
+                }
+                
+                updateProgress('processingProgress', 100);
+                showStatus('processingStatus', 'Data processing completed successfully!', 'success');
+                
+                setTimeout(() => {
+                    showQuestionnaire();
+                }, 1000);
+                
+            } catch (error) {
+                log(`Data processing failed: ${error.message}`, 'error');
+                showStatus('processingStatus', `Processing failed: ${error.message}`, 'error');
+            }
+        }
+
+        function generateSummary(data) {
+            if (data.length === 0) return {};
+            
+            // Group by data type
+            const arousalValenceData = data.filter(d => d.type === 'FACE_AROUSAL_VALENCE');
+            const emotionData = data.filter(d => d.type === 'FACE_EMOTION');
+            const attentionData = data.filter(d => d.type === 'FACE_ATTENTION');
+            const detectorData = data.filter(d => d.type === 'FACE_DETECTOR');
+            
+            // Calculate face detection rate from detector data
+            const faceDetectedCount = detectorData.filter(d => d.totalFaces > 0).length;
+            const faceDetectionRate = detectorData.length > 0 ? (faceDetectedCount / detectorData.length) * 100 : 0;
+            
+            const summary = {
+                totalDataPoints: data.length,
+                faceDetectionRate: faceDetectionRate,
+                dataTypes: {
+                    arousalValence: arousalValenceData.length,
+                    emotion: emotionData.length,
+                    attention: attentionData.length,
+                    detector: detectorData.length
+                }
+            };
+            
+            // Calculate averages if data exists
+            if (arousalValenceData.length > 0) {
+                summary.averageArousal = arousalValenceData.reduce((sum, d) => sum + (d.arousal || 0), 0) / arousalValenceData.length;
+                summary.averageValence = arousalValenceData.reduce((sum, d) => sum + (d.valence || 0), 0) / arousalValenceData.length;
+            }
+            
+            if (attentionData.length > 0) {
+                summary.averageAttention = attentionData.reduce((sum, d) => sum + (d.attention || 0), 0) / attentionData.length;
+            }
+            
+            if (emotionData.length > 0) {
+                const dominantEmotions = emotionData.map(d => d.dominantEmotion).filter(e => e);
+                summary.dominantEmotions = [...new Set(dominantEmotions)];
+                
+                // Calculate average emotion scores
+                const emotionTotals = {
+                    Angry: 0, Disgust: 0, Fear: 0, Happy: 0, 
+                    Neutral: 0, Sad: 0, Surprise: 0
+                };
+                
+                emotionData.forEach(d => {
+                    if (d.emotions) {
+                        Object.keys(emotionTotals).forEach(emotion => {
+                            if (d.emotions[emotion] !== undefined) {
+                                emotionTotals[emotion] += d.emotions[emotion];
+                            }
+                        });
+                    }
+                });
+                
+                summary.averageEmotions = {};
+                Object.keys(emotionTotals).forEach(emotion => {
+                    summary.averageEmotions[emotion] = emotionTotals[emotion] / emotionData.length;
+                });
+            }
+            
+            return summary;
+        }
+
+        async function saveToSupabase(reportData, questionnaireData) {
+            try {
+                // Step 1: Upload JSON file to storage bucket
+                const jsonData = JSON.stringify(reportData, null, 2);
+                const jsonBlob = new Blob([jsonData], { type: 'application/json' });
+                const filename = `emotion_data_${reportData.workerId}_${Date.now()}.json`;
+                
+                log('Uploading JSON file to Supabase storage...', 'debug');
+                const { data: uploadData, error: uploadError } = await supabaseClient.storage
+                    .from(CONFIG.SUPABASE_STORAGE_BUCKET)
+                    .upload(filename, jsonBlob, {
+                        cacheControl: '3600',
+                        upsert: false
+                    });
+                
+                if (uploadError) {
+                    log(`JSON upload failed: ${uploadError.message}`, 'error');
+                    throw uploadError;
+                }
+                
+                log('JSON file uploaded successfully', 'success');
+                
+                // Step 2: Save database record
+                const { data, error } = await supabaseClient
+                    .from(CONFIG.SUPABASE_TABLE)
+                    .insert([{
+                        user_id: generateUserId(),
+                        json_filename: filename,
+                        question1_memorable_moment: questionnaireData.question1,
+                        question2_play_chance: questionnaireData.question2,
+                        task_id: reportData.taskId,
+                        video_url: reportData.videoUrl
+                    }]);
+                
+                if (error) {
+                    log(`Database insert failed: ${error.message}`, 'error');
+                    throw error;
+                }
+                
+                log('Database record saved successfully', 'success');
+                
+            } catch (error) {
+                log(`Supabase save failed: ${error.message}`, 'error');
+                throw error;
+            }
+        }
+
+        // ==================== QUESTIONNAIRE ====================
+        function showQuestionnaire() {
+            showStep(6);
+            log('Showing questionnaire', 'info');
+        }
+
+        async function submitQuestionnaire() {
+            try {
+                const question1 = document.getElementById('question1').value.trim();
+                const question2 = document.getElementById('question2').value.trim();
+                
+                if (!question1 || !question2) {
+                    log('Please answer both questions', 'warning');
+                    alert('Please answer both questions before submitting.');
+                    return;
+                }
+                
+                const questionnaireData = {
+                    question1: question1,
+                    question2: question2
+                };
+                
+                log('Submitting questionnaire and saving data...', 'info');
+                
+                // Save to Supabase with questionnaire data
+                await saveToSupabase(processedReportData, questionnaireData);
+                
+                // Proceed to completion
+                showCompletion();
+                
+            } catch (error) {
+                log(`Questionnaire submission failed: ${error.message}`, 'error');
+                alert('There was an error submitting your responses. Please try again.');
+            }
+        }
+
+        // ==================== COMPLETION ====================
+        function showCompletion() {
+            showStep(7);
+            document.getElementById('completionCode').textContent = CONFIG.COMPLETION_CODE;
+            log('Task completed successfully', 'success');
+        }
+        
+
+
+
+
+        // ==================== PRIVACY POLICY ====================
+        let previousStep = 1;
+
+        function showPrivacyPolicy() {
+            // Save current step
+            previousStep = currentStep;
+            
+            // Hide all steps
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+                step.style.display = 'none';
+            });
+            
+            // Show privacy policy
+            document.getElementById('privacyPolicy').style.display = 'block';
+            log('Privacy policy displayed', 'info');
+        }
+
+        function goBack() {
+            // Hide privacy policy
+            document.getElementById('privacyPolicy').style.display = 'none';
+            
+            // Show previous step
+            showStep(previousStep);
+            log('Returned from privacy policy', 'info');
+        }
+
+        // ==================== EVENT LISTENERS ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            log('DOM loaded, starting system initialization...', 'info');
+            
+            // Set up event listeners
+            document.getElementById('allowCameraBtn').addEventListener('click', requestCameraAccess);
+            document.getElementById('proceedToVideoBtn').addEventListener('click', proceedToVideo);
+            document.getElementById('startVideoBtn').addEventListener('click', startVideo);
+            document.getElementById('submitQuestionsBtn').addEventListener('click', submitQuestionnaire);
+            
+            // Start system initialization
+            initializeSystem();
+        });
+
+        // ==================== ERROR HANDLING ====================
+        window.addEventListener('error', (event) => {
+            log(`Global error: ${event.error?.message || event.message}`, 'error');
+        });
+
+        window.addEventListener('unhandledrejection', (event) => {
+            log(`Unhandled rejection: ${event.reason}`, 'error');
+        });
+
+    </script>
+</body>
+</html>
+
