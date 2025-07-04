@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Arousal - Mobile Emotion Tracking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .logo {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .features {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features li {
+            padding: 8px 0;
+            color: #555;
+            font-size: 1.1em;
+        }
+        
+        .features li:before {
+            content: "✅ ";
+            margin-right: 10px;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .mobile-note {
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #1976d2;
+            font-weight: 500;
+        }
+        
+        .links {
+            margin-top: 30px;
+        }
+        
+        .links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .logo {
+                font-size: 3em;
+            }
+            
+            .btn {
+                padding: 15px 30px;
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🎬</div>
+        <h1>Arousal</h1>
+        <p class="subtitle">Mobile-first emotion tracking system with AI-powered facial expression analysis</p>
+        
+        <div class="features">
+            <ul>
+                <li>Real-time emotion detection</li>
+                <li>Fullscreen video playback</li>
+                <li>Mobile-optimized interface</li>
+                <li>No-skip video control</li>
+                <li>Precise timeline synchronization</li>
+            </ul>
+        </div>
+        
+        <div class="mobile-note">
+            📱 <strong>Best experienced on mobile devices</strong><br>
+            Camera access required for emotion tracking
+        </div>
+        
+        <a href="V2/webapp/emotion-tracker.html" class="btn">🚀 Start Emotion Tracking</a>
+        <a href="V2/webapp/test-fixes.html" class="btn" style="background: #28a745;">🔧 Test System</a>
+        
+        <div class="links">
+            <a href="https://github.com/yaronskihoma/Arousal">📚 Documentation</a>
+            <a href="https://github.com/yaronskihoma/Arousal/issues">🐛 Report Issues</a>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-redirect to main app if accessed directly on mobile
+        if (window.location.search.includes('auto=true')) {
+            window.location.href = 'V2/webapp/emotion-tracker.html';
+        }
+        
+        // Add some analytics
+        console.log('🎬 Arousal Emotion Tracking System');
+        console.log('📱 Mobile-optimized experience');
+        console.log('🔗 GitHub: https://github.com/yaronskihoma/Arousal');
+        
+        // Mobile detection
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        if (isMobile) {
+            console.log('📱 Mobile device detected - optimized experience ready');
+        }
+    </script>
+</body>
+</html> 
