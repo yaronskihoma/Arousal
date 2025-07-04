@@ -220,6 +220,17 @@
                 min-width: 150px;
                 font-size: 1em;
             }
+            
+            /* Mobile-specific styling for video overlay button */
+            #videoOverlay {
+                font-size: 1em !important;
+            }
+            
+            #videoOverlay button {
+                padding: 12px 25px !important;
+                font-size: 1em !important;
+                min-width: 140px !important;
+            }
         }
     </style>
 </head>
@@ -309,23 +320,45 @@
                     height: 100%;
                     background: rgba(0,0,0,0.8);
                     display: flex;
+                    flex-direction: column;
                     align-items: center;
                     justify-content: center;
                     color: white;
                     font-size: 1.2em;
                     border-radius: 8px;
                     z-index: 100;
-                    cursor: not-allowed;
-                    user-select: none;
                     pointer-events: all;
+                    gap: 20px;
                 ">
-                    🎬 Use "Start Video" button below
+                    <div style="text-align: center; margin-bottom: 10px;">
+                        🎬 Ready to start emotion tracking
+                    </div>
+                    <button id="startVideoBtn" style="
+                        background: linear-gradient(45deg, #667eea, #764ba2);
+                        color: white;
+                        border: none;
+                        padding: 15px 30px;
+                        font-size: 1.1em;
+                        border-radius: 25px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        font-weight: 600;
+                        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+                        min-width: 160px;
+                        -webkit-tap-highlight-color: transparent;
+                        user-select: none;
+                        outline: none;
+                    " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.6)'" 
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.4)'"
+                       ontouchstart="this.style.transform='translateY(-1px)'"
+                       ontouchend="this.style.transform='translateY(0)'">
+                        🚀 Start Video
+                    </button>
                 </div>
             </div>
             <div class="progress-bar">
                 <div class="progress-fill" id="videoProgress"></div>
             </div>
-            <button class="btn" id="startVideoBtn">Start Video</button>
             <div id="videoStatus"></div>
             
             <!-- Real-time Emotion Data Display -->
@@ -1005,16 +1038,16 @@
             
             try {
                 log('Starting video playback...', 'info');
-                startBtn.disabled = true;
-                showStatus('videoStatus', 'Starting video...', 'info');
                 
-                // Remove the video overlay to show the actual video
-                if (videoOverlay) {
-                    videoOverlay.style.display = 'none';
+                // Disable button and show loading state
+                if (startBtn) {
+                    startBtn.disabled = true;
+                    startBtn.innerHTML = '⏳ Starting...';
+                    startBtn.style.opacity = '0.7';
+                    startBtn.style.cursor = 'not-allowed';
                 }
                 
-                // Enable video interactions only when starting properly
-                video.style.pointerEvents = 'auto';
+                showStatus('videoStatus', 'Starting video...', 'info');
                 
                 // Allow video to play through our controlled process
                 if (window.allowVideoPlay) {
@@ -1023,6 +1056,14 @@
                 
                 // Initialize emotion tracking
                 await initializeEmotionTracking();
+                
+                // Remove the video overlay to show the actual video
+                if (videoOverlay) {
+                    videoOverlay.style.display = 'none';
+                }
+                
+                // Enable video interactions only when starting properly
+                video.style.pointerEvents = 'auto';
                 
                 // Enter fullscreen mode before starting video
                 await enterFullscreen(video);
@@ -1045,13 +1086,23 @@
                 await video.play();
                 videoStartTime = Date.now();
                 
+                // Show real-time emotion data
+                document.getElementById('emotionData').style.display = 'block';
+                
                 log('Video started successfully in fullscreen', 'success');
                 showStatus('videoStatus', 'Video playing - emotion tracking active', 'success');
                 
             } catch (error) {
                 log(`Video start failed: ${error.message}`, 'error');
                 showStatus('videoStatus', `Failed to start video: ${error.message}`, 'error');
-                startBtn.disabled = false;
+                
+                // Restore button state on error
+                if (startBtn) {
+                    startBtn.disabled = false;
+                    startBtn.innerHTML = '🚀 Start Video';
+                    startBtn.style.opacity = '1';
+                    startBtn.style.cursor = 'pointer';
+                }
                 
                 // Re-enable overlay on error
                 if (videoOverlay) {
