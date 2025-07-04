@@ -98,6 +98,32 @@
             width: 100%;
             height: auto;
             display: block;
+            pointer-events: none;
+        }
+        
+        /* Completely hide video controls across all browsers */
+        video::-webkit-media-controls {
+            display: none !important;
+        }
+        
+        video::-webkit-media-controls-panel {
+            display: none !important;
+        }
+        
+        video::-webkit-media-controls-play-button {
+            display: none !important;
+        }
+        
+        video::-webkit-media-controls-start-playback-button {
+            display: none !important;
+        }
+        
+        video::-moz-media-controls {
+            display: none !important;
+        }
+        
+        video::-ms-media-controls {
+            display: none !important;
         }
 
         .progress-bar {
@@ -264,11 +290,33 @@
                        webkit-playsinline
                        controls="false"
                        disableremoteplayback
-                       controlslist="nodownload noplaybackrate nofullscreen noremoteplayback"
-                       oncontextmenu="return false;">
+                       controlslist="nodownload noplaybackrate nofullscreen noremoteplaybook"
+                       oncontextmenu="return false;"
+                       style="pointer-events: none; position: relative;">
                     <source src="" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <!-- Overlay to prevent any video interaction -->
+                <div id="videoOverlay" style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.8);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-size: 1.2em;
+                    border-radius: 8px;
+                    z-index: 100;
+                    cursor: not-allowed;
+                    user-select: none;
+                    pointer-events: all;
+                ">
+                    🎬 Use "Start Video" button below
+                </div>
             </div>
             <div class="progress-bar">
                 <div class="progress-fill" id="videoProgress"></div>
@@ -805,6 +853,29 @@
                 log('Video already preloaded', 'debug');
             }
             
+            // Prevent video from playing unless started through our button
+            let videoAllowedToPlay = false;
+            
+            const preventUnauthorizedPlay = (event) => {
+                if (!videoAllowedToPlay) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    video.pause();
+                    log('Unauthorized video play attempt blocked', 'warning');
+                    return false;
+                }
+            };
+            
+            video.addEventListener('play', preventUnauthorizedPlay);
+            video.addEventListener('playing', preventUnauthorizedPlay);
+            
+            // Store reference to allow play when button is clicked
+            window.allowVideoPlay = () => {
+                videoAllowedToPlay = true;
+                video.removeEventListener('play', preventUnauthorizedPlay);
+                video.removeEventListener('playing', preventUnauthorizedPlay);
+            };
+            
             // Video event listeners
             video.onloadedmetadata = () => {
                 log(`Video metadata loaded: ${video.duration}s`, 'debug');
@@ -926,11 +997,25 @@
         async function startVideo() {
             const video = document.getElementById('videoPlayer');
             const startBtn = document.getElementById('startVideoBtn');
+            const videoOverlay = document.getElementById('videoOverlay');
             
             try {
                 log('Starting video playback...', 'info');
                 startBtn.disabled = true;
                 showStatus('videoStatus', 'Starting video...', 'info');
+                
+                // Remove the video overlay to show the actual video
+                if (videoOverlay) {
+                    videoOverlay.style.display = 'none';
+                }
+                
+                // Enable video interactions only when starting properly
+                video.style.pointerEvents = 'auto';
+                
+                // Allow video to play through our controlled process
+                if (window.allowVideoPlay) {
+                    window.allowVideoPlay();
+                }
                 
                 // Initialize emotion tracking
                 await initializeEmotionTracking();
@@ -963,6 +1048,12 @@
                 log(`Video start failed: ${error.message}`, 'error');
                 showStatus('videoStatus', `Failed to start video: ${error.message}`, 'error');
                 startBtn.disabled = false;
+                
+                // Re-enable overlay on error
+                if (videoOverlay) {
+                    videoOverlay.style.display = 'flex';
+                }
+                video.style.pointerEvents = 'none';
             }
         }
         
