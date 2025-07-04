@@ -42,6 +42,34 @@
             display: block;
         }
 
+        #privacyPolicy {
+            text-align: left;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        #privacyPolicy h1 {
+            font-size: 1.5em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        #privacyPolicy h2 {
+            font-size: 1.2em;
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+        }
+
+        #privacyPolicy p, #privacyPolicy li {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        #privacyPolicy ul {
+            margin-left: 20px;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -184,6 +212,7 @@
             text-align: left;
             font-family: monospace;
             font-size: 0.9em;
+            display: none; /* Hide debug panel from users */
         }
 
         .debug-entry {
@@ -240,6 +269,7 @@
         <div class="step active" id="step1">
             <h1>🔍 System Check</h1>
             <p>Checking system components and configuration...</p>
+            
             <div class="progress-bar">
                 <div class="progress-fill" id="systemProgress"></div>
             </div>
@@ -258,6 +288,17 @@
             <h1>📹 Camera Access</h1>
             <h2>We need camera access to track emotions</h2>
             <p>Your camera feed stays private and is only used for emotion analysis.</p>
+            
+            <!-- Privacy Policy Link -->
+            <div style="margin: 20px 0; padding: 15px; background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; text-align: center;">
+                <p style="margin: 0 0 10px 0; font-size: 0.9em; color: #666;">
+                    By continuing, you agree to our data collection practices.
+                </p>
+                <button onclick="showPrivacyPolicy()" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 0.9em;">
+                    📄 View Privacy Policy
+                </button>
+            </div>
+            
             <button class="btn" id="allowCameraBtn">Allow Camera Access</button>
             <div id="cameraStatus"></div>
         </div>
@@ -293,9 +334,14 @@
         <div class="step" id="step4">
             <h1>🎬 Video Task</h1>
             <h2>Please watch the video carefully</h2>
+            
+            <!-- Sound Instructions -->
+            <div class="status warning" style="margin-bottom: 20px;">
+                <strong>🔊 Sound Required:</strong> Please ensure your device sound is turned ON. 
+                The video includes audio that's important for the study.
+            </div>
             <div class="video-container">
                 <video id="videoPlayer" 
-                       muted 
                        preload="auto" 
                        playsinline 
                        webkit-playsinline
@@ -331,7 +377,8 @@
                     gap: 20px;
                 ">
                     <div style="text-align: center; margin-bottom: 10px;">
-                        🎬 Ready to start emotion tracking
+                        🎬 Ready to start emotion tracking<br>
+                        🔊 Make sure your sound is ON
                     </div>
                     <button id="startVideoBtn" style="
                         background: linear-gradient(45deg, #667eea, #764ba2);
@@ -378,19 +425,93 @@
             <div id="processingStatus"></div>
         </div>
 
-        <!-- Step 6: Completion -->
+        <!-- Step 6: Questionnaire -->
         <div class="step" id="step6">
+            <h1>📝 Quick Questions</h1>
+            <h2>Please answer these final questions</h2>
+            <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+                <div style="margin-bottom: 25px;">
+                    <label for="question1" style="display: block; font-weight: bold; margin-bottom: 10px; color: #333;">
+                        1. What was the most memorable moment in the video?
+                    </label>
+                    <textarea id="question1" 
+                              style="width: 100%; height: 100px; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1em; resize: vertical; font-family: inherit;"
+                              placeholder="Please describe the most memorable moment from the video..."></textarea>
+                </div>
+                <div style="margin-bottom: 25px;">
+                    <label for="question2" style="display: block; font-weight: bold; margin-bottom: 10px; color: #333;">
+                        2. Would you give this game a chance to play?
+                    </label>
+                    <select id="question2" 
+                            style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1em; font-family: inherit; background: white; appearance: none; cursor: pointer;">
+                        <option value="">-- Please select an option --</option>
+                        <option value="yes absolutely">Yes absolutely</option>
+                        <option value="not sure">Not sure</option>
+                        <option value="definitely no">Definitely no</option>
+                    </select>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn" id="submitQuestionsBtn" style="background: #28a745; min-width: 200px;">
+                        Submit & Complete Task
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 7: Completion -->
+        <div class="step" id="step7">
             <h1>✅ Task Complete</h1>
             <h2>Thank you for participating!</h2>
             <div class="completion-code" id="completionCode"></div>
-            <p>Please use this code in your survey platform.</p>
-            <div id="dataDownloadSection" style="margin: 20px 0;">
-                <button class="btn" id="downloadDataBtn" style="background: #17a2b8;">Download Data (JSON)</button>
-                <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
-                    Optional: Download your emotion tracking data for analysis
-                </p>
+            <p style="font-size: 1.1em; margin: 20px 0; line-height: 1.6;">
+                <strong>Please copy this code and paste it into Clickworker to complete your task and receive payment.</strong>
+            </p>
+            <p style="color: #666; font-size: 0.9em; margin-top: 15px;">
+                You can now close this window and return to Clickworker.
+            </p>
+        </div>
+
+        <!-- Privacy Policy Modal -->
+        <div class="step" id="privacyPolicy" style="display: none;">
+            <h1>Privacy Policy for Emotion Tracking Service Using MorphCast SDK</h1>
+            <p><strong>Last Updated:</strong> July 4, 2025</p>
+
+            <p>We are committed to protecting your privacy and ensuring the security of the personal information you provide when using our Emotion Tracking Service, which utilizes the MorphCast SDK. This policy explains how we collect, use, and protect your data.</p>
+
+            <h2>1. Data Collection</h2>
+            <p>We only collect emotional and facial data via the MorphCast SDK for marketing purposes. <a href="https://www.morphcast.com/mission/#privacies" target="_blank">Check MorphCast privacy FAQ</a>.</p>
+            <p><strong>No videos or images of you are stored or shared</strong>. The data collected includes:</p>
+            <ul>
+                <li>Emotional reactions (such as facial expressions and emotions like happiness, surprise, etc.).</li>
+                <li>Attention and engagement levels.</li>
+                <li>Valence and arousal information, which measure the intensity of your emotional state.</li>
+            </ul>
+            <p>This data is collected in real-time while you watch our video content but is not stored in any video or image form.</p>
+
+            <h2>2. Purpose of Data Collection</h2>
+            <p>The data collected by MorphCast is used solely for marketing purposes, helping us better understand user reactions to our video content to improve our marketing strategies. We do not use this data to personally identify users or store any personally identifiable information (PII).</p>
+
+            <h2>3. No Storage of Videos</h2>
+            <p>Our service does <strong>not</strong> record or store any video or image of you. The MorphCast SDK processes the data directly from your camera and only transmits emotional analysis data.</p>
+
+            <h2>4. Data Security</h2>
+            <p>We take your privacy seriously and implement industry-standard measures to secure the emotional data collected. Your data is processed in a GDPR-compliant manner. We do not share this data with third parties unless required by law.</p>
+
+            <h2>5. Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access the data collected about you.</li>
+                <li>Request the deletion of the data.</li>
+                <li>Withdraw your consent at any time, after which the service will no longer collect data.</li>
+            </ul>
+            <p>If you wish to exercise any of these rights or have any questions regarding your privacy, please contact us at support@emotiontracking.com.</p>
+
+            <h2>6. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, with an updated "Last Updated" date.</p>
+
+            <div class="backlink" style="text-align: center; margin-top: 30px;">
+                <button class="btn" onclick="goBack()">Back to Previous Page</button>
             </div>
-            <button class="btn" id="restartBtn">Start New Session</button>
         </div>
     </div>
 
@@ -401,9 +522,11 @@
             TASK_ID: 'TASK-CLEAN',
             COMPLETION_CODE: 'CLEAN123',
             MORPHCAST_LICENSE: 'ap95c1923492e8512306644ca7fea0e66e7c27a47b97bb',
-            // Updated Supabase URL from working V1 examples
-            SUPABASE_URL: 'https://szshayacurojnsbdcwkc.supabase.co',
-            SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN6c2hheWFjdXJvam5zYmRjd2tjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMTg2MTU0MywiZXhwIjoyMDQ3NDM3NTQzfQ.GQIgU6vFz0ZcIgxmuNxAXQnpoaqh3YKdCdHQMFTJvUg',
+            // Updated Supabase URL - correct working credentials
+            SUPABASE_URL: 'https://nxlyelvtfphybhyfhxwc.supabase.co',
+            SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54bHllbHZ0ZnBoeWJoeWZoeHdjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MTYyNzgxOSwiZXhwIjoyMDY3MjAzODE5fQ.8F-la271rAdg-kPuxEySLUDaKyqNItrsoOzwoWWjnbw',
+            SUPABASE_STORAGE_BUCKET: 'cay250704',
+            SUPABASE_TABLE: 'emotion_tracking_data',
             VIDEO_DURATION: 24,
             TIMELINE_DURATION: 30
         };
@@ -489,14 +612,25 @@
         function showStep(stepNumber) {
             document.querySelectorAll('.step').forEach(step => {
                 step.classList.remove('active');
+                step.style.display = 'none';
             });
-            document.getElementById(`step${stepNumber}`).classList.add('active');
-            currentStep = stepNumber;
-            log(`Showing step ${stepNumber}`, 'info');
+            
+            const targetStep = document.getElementById(`step${stepNumber}`);
+            if (targetStep) {
+                targetStep.classList.add('active');
+                targetStep.style.display = 'block';
+                currentStep = stepNumber;
+                log(`Showing step ${stepNumber}`, 'info');
+            }
         }
 
         function generateWorkerId() {
             return 'worker_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        function generateUserId() {
+            // Generate a simple numeric user ID
+            return Math.floor(Math.random() * 100000) + 1;
         }
         
         function updateFaceDetectionDisplay(faceDetected, totalFaces = 0) {
@@ -778,7 +912,8 @@
                 }
                 
                 const video = document.createElement('video');
-                video.muted = true;
+                video.muted = false;
+                video.volume = 0.8; // Set volume to 80%
                 video.preload = 'auto'; // Changed to 'auto' for better preloading
                 
                 video.onloadedmetadata = () => {
@@ -789,8 +924,10 @@
                     if (mainVideo) {
                         mainVideo.src = CONFIG.VIDEO_URL;
                         mainVideo.preload = 'auto';
+                        mainVideo.muted = false;
+                        mainVideo.volume = 0.8; // Set volume to 80%
                         mainVideo.load();
-                        log('Main video started preloading', 'debug');
+                        log('Main video started preloading with sound enabled', 'debug');
                         
                         // Update preload status
                         if (preloadContent) {
@@ -884,10 +1021,15 @@
             if (!video.src) {
                 video.src = CONFIG.VIDEO_URL;
                 video.preload = 'auto';
+                video.muted = false;
+                video.volume = 0.8; // Set volume to 80%
                 video.load();
-                log('Video source set and loading started', 'debug');
+                log('Video source set and loading started with sound enabled', 'debug');
             } else {
-                log('Video already preloaded', 'debug');
+                // Ensure sound is enabled even if video was preloaded
+                video.muted = false;
+                video.volume = 0.8; // Set volume to 80%
+                log('Video already preloaded, sound enabled', 'debug');
             }
             
             // Prevent video from playing unless started through our button
@@ -1425,21 +1567,9 @@
                 
                 updateProgress('processingProgress', 50);
                 
-                // Save to Supabase (optional)
-                log('Attempting to save data to Supabase...', 'debug');
-                try {
-                    await saveToSupabase(reportData);
-                    log('Data saved to Supabase successfully', 'success');
-                } catch (error) {
-                    log(`Supabase save failed: ${error.message}`, 'warning');
-                    log('Continuing without database save - data processing will complete', 'info');
-                    
-                    // Save data locally as fallback
-                    console.log('💾 Tracking Data (Local Save):', reportData);
-                    log('Data saved to browser console for debugging', 'info');
-                }
-                
+                // Data processing complete, proceed to questionnaire
                 updateProgress('processingProgress', 80);
+                log('Data processing completed, proceeding to questionnaire', 'info');
                 
                 // Clean up
                 if (morphcastWindow) {
@@ -1458,7 +1588,7 @@
                 showStatus('processingStatus', 'Data processing completed successfully!', 'success');
                 
                 setTimeout(() => {
-                    showCompletion();
+                    showQuestionnaire();
                 }, 1000);
                 
             } catch (error) {
@@ -1530,23 +1660,46 @@
             return summary;
         }
 
-        async function saveToSupabase(reportData) {
+        async function saveToSupabase(reportData, questionnaireData) {
             try {
+                // Step 1: Upload JSON file to storage bucket
+                const jsonData = JSON.stringify(reportData, null, 2);
+                const jsonBlob = new Blob([jsonData], { type: 'application/json' });
+                const filename = `emotion_data_${reportData.workerId}_${Date.now()}.json`;
+                
+                log('Uploading JSON file to Supabase storage...', 'debug');
+                const { data: uploadData, error: uploadError } = await supabaseClient.storage
+                    .from(CONFIG.SUPABASE_STORAGE_BUCKET)
+                    .upload(filename, jsonBlob, {
+                        cacheControl: '3600',
+                        upsert: false
+                    });
+                
+                if (uploadError) {
+                    log(`JSON upload failed: ${uploadError.message}`, 'error');
+                    throw uploadError;
+                }
+                
+                log('JSON file uploaded successfully', 'success');
+                
+                // Step 2: Save database record
                 const { data, error } = await supabaseClient
-                    .from('emotion_reports')
+                    .from(CONFIG.SUPABASE_TABLE)
                     .insert([{
-                        worker_id: reportData.workerId,
+                        user_id: generateUserId(),
+                        json_filename: filename,
+                        question1_memorable_moment: questionnaireData.question1,
+                        question2_play_chance: questionnaireData.question2,
                         task_id: reportData.taskId,
-                        timestamp: reportData.timestamp,
-                        video_url: reportData.videoUrl,
-                        video_duration: reportData.videoDuration,
-                        tracking_data: reportData.trackingData,
-                        summary: reportData.summary
+                        video_url: reportData.videoUrl
                     }]);
                 
-                if (error) throw error;
+                if (error) {
+                    log(`Database insert failed: ${error.message}`, 'error');
+                    throw error;
+                }
                 
-                log('Data saved to Supabase successfully', 'success');
+                log('Database record saved successfully', 'success');
                 
             } catch (error) {
                 log(`Supabase save failed: ${error.message}`, 'error');
@@ -1554,108 +1707,78 @@
             }
         }
 
+        // ==================== QUESTIONNAIRE ====================
+        function showQuestionnaire() {
+            showStep(6);
+            log('Showing questionnaire', 'info');
+        }
+
+        async function submitQuestionnaire() {
+            try {
+                const question1 = document.getElementById('question1').value.trim();
+                const question2 = document.getElementById('question2').value.trim();
+                
+                if (!question1 || !question2) {
+                    log('Please answer both questions', 'warning');
+                    alert('Please answer both questions before submitting.');
+                    return;
+                }
+                
+                const questionnaireData = {
+                    question1: question1,
+                    question2: question2
+                };
+                
+                log('Submitting questionnaire and saving data...', 'info');
+                
+                // Save to Supabase with questionnaire data
+                await saveToSupabase(processedReportData, questionnaireData);
+                
+                // Proceed to completion
+                showCompletion();
+                
+            } catch (error) {
+                log(`Questionnaire submission failed: ${error.message}`, 'error');
+                alert('There was an error submitting your responses. Please try again.');
+            }
+        }
+
         // ==================== COMPLETION ====================
         function showCompletion() {
-            showStep(6);
+            showStep(7);
             document.getElementById('completionCode').textContent = CONFIG.COMPLETION_CODE;
             log('Task completed successfully', 'success');
         }
         
-        function downloadData() {
-            if (!processedReportData) {
-                log('No data available for download', 'warning');
-                return;
-            }
+
+
+
+
+        // ==================== PRIVACY POLICY ====================
+        let previousStep = 1;
+
+        function showPrivacyPolicy() {
+            // Save current step
+            previousStep = currentStep;
             
-            try {
-                const dataStr = JSON.stringify(processedReportData, null, 2);
-                const dataBlob = new Blob([dataStr], { type: 'application/json' });
-                const url = URL.createObjectURL(dataBlob);
-                
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = `emotion_data_${processedReportData.workerId}_${Date.now()}.json`;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                
-                URL.revokeObjectURL(url);
-                log('Data downloaded successfully', 'success');
-                
-            } catch (error) {
-                log(`Download failed: ${error.message}`, 'error');
-            }
+            // Hide all steps
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+                step.style.display = 'none';
+            });
+            
+            // Show privacy policy
+            document.getElementById('privacyPolicy').style.display = 'block';
+            log('Privacy policy displayed', 'info');
         }
 
-        async function restartSession() {
-            log('Restarting session...', 'info');
+        function goBack() {
+            // Hide privacy policy
+            document.getElementById('privacyPolicy').style.display = 'none';
             
-            // Reset all variables
-            trackingData = [];
-            videoStartTime = null;
-            currentStep = 1;
-            processedReportData = null;
-            currentEmotionData = {
-                arousal: 0,
-                valence: 0,
-                attention: 0,
-                dominantEmotion: 'neutral',
-                faceDetected: false,
-                lastUpdate: null
-            };
-            
-            // Reset face detection variables
-            faceDetectionActive = false;
-            lastFaceDetected = false;
-            faceDetectionStartTime = null;
-            
-            // Stop Morphcast if running
-            if (morphcastWindow) {
-                try {
-                    await morphcastWindow.stop();
-                    log('Morphcast stopped for restart', 'debug');
-                } catch (error) {
-                    log(`Error stopping Morphcast: ${error.message}`, 'warning');
-                }
-                morphcastWindow = null;
-            }
-            
-            // Stop face detection if running
-            if (faceDetectionWindow) {
-                try {
-                    await faceDetectionWindow.stop();
-                    window.removeEventListener(CY.modules().FACE_DETECTOR.eventName, handleFaceDetectionValidation);
-                    log('Face detection stopped for restart', 'debug');
-                } catch (error) {
-                    log(`Error stopping face detection: ${error.message}`, 'warning');
-                }
-                faceDetectionWindow = null;
-            }
-            
-            // Reset video
-            const video = document.getElementById('videoPlayer');
-            video.pause();
-            video.currentTime = 0;
-            
-            // Reset progress bars
-            updateProgress('systemProgress', 0);
-            updateProgress('videoProgress', 0);
-            updateProgress('processingProgress', 0);
-            
-            // Reset face detection display
-            updateFaceDetectionDisplay(false, 0);
-            
-            // Clear debug panel
-            document.getElementById('systemDebug').innerHTML = '';
-            
-            // Hide emotion data display
-            document.getElementById('emotionData').style.display = 'none';
-            
-            // Start over
-            showStep(1);
-            setTimeout(async () => {
-                await initializeSystem();
-            }, 500);
+            // Show previous step
+            showStep(previousStep);
+            log('Returned from privacy policy', 'info');
         }
 
         // ==================== EVENT LISTENERS ====================
@@ -1666,10 +1789,7 @@
             document.getElementById('allowCameraBtn').addEventListener('click', requestCameraAccess);
             document.getElementById('proceedToVideoBtn').addEventListener('click', proceedToVideo);
             document.getElementById('startVideoBtn').addEventListener('click', startVideo);
-            document.getElementById('downloadDataBtn').addEventListener('click', downloadData);
-            document.getElementById('restartBtn').addEventListener('click', async () => {
-                await restartSession();
-            });
+            document.getElementById('submitQuestionsBtn').addEventListener('click', submitQuestionnaire);
             
             // Start system initialization
             initializeSystem();
@@ -1687,3 +1807,4 @@
     </script>
 </body>
 </html>
+

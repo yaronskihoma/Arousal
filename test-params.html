@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Parameters Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .result { background: #f0f0f0; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>URL Parameters Test</h1>
+    <p>Test the URL parameters functionality before deployment.</p>
+    
+    <div id="results"></div>
+    
+    <h2>Test URLs:</h2>
+    <ul>
+        <li><a href="?video=video1&code=EM7K2X9Q">Video 1 Test</a></li>
+        <li><a href="?video=video2&code=B4N6P8R1">Video 2 Test</a></li>
+        <li><a href="?video=video5&code=L9B5H3F7">Video 5 Test (Long video)</a></li>
+        <li><a href="?video=video10&code=C2Y7M4K8">Video 10 Test</a></li>
+        <li><a href="?">No Parameters (Default)</a></li>
+    </ul>
+    
+    <script type="module">
+        import config from './config.js';
+        
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+        
+        const videoParam = getUrlParameter('video');
+        const codeParam = getUrlParameter('code');
+        
+        const resultsDiv = document.getElementById('results');
+        
+        let html = '<h2>Test Results:</h2>';
+        
+        // Test 1: URL Parameters
+        html += '<div class="result">';
+        html += '<h3>URL Parameters:</h3>';
+        html += `<p><strong>Video Parameter:</strong> ${videoParam || 'None'}</p>`;
+        html += `<p><strong>Code Parameter:</strong> ${codeParam || 'None'}</p>`;
+        html += '</div>';
+        
+        // Test 2: Config Values
+        html += '<div class="result">';
+        html += '<h3>Config Values:</h3>';
+        html += `<p><strong>VIDEO_URL:</strong> ${config.VIDEO_URL}</p>`;
+        html += `<p><strong>COMPLETION_CODE:</strong> ${config.COMPLETION_CODE}</p>`;
+        html += `<p><strong>TASK_ID:</strong> ${config.TASK_ID}</p>`;
+        html += '</div>';
+        
+        // Test 3: Video URL Validation
+        html += '<div class="result">';
+        html += '<h3>Video URL Test:</h3>';
+        const video = document.createElement('video');
+        video.src = config.VIDEO_URL;
+        video.onloadedmetadata = () => {
+            document.getElementById('videoTest').innerHTML = `<span class="success">✅ Video loads successfully (${video.duration.toFixed(1)}s)</span>`;
+        };
+        video.onerror = () => {
+            document.getElementById('videoTest').innerHTML = `<span class="error">❌ Video failed to load</span>`;
+        };
+        html += '<p id="videoTest">🔄 Testing video loading...</p>';
+        html += '</div>';
+        
+        // Test 4: Expected Behavior
+        html += '<div class="result">';
+        html += '<h3>Expected vs Actual:</h3>';
+        if (videoParam) {
+            html += `<p><strong>Expected:</strong> Show video ${videoParam} with code ${codeParam || 'auto-generated'}</p>`;
+            html += `<p><strong>Actual:</strong> ${config.VIDEO_URL.includes(videoParam) ? '✅ Correct video selected' : '❌ Wrong video selected'}</p>`;
+        } else {
+            html += `<p><strong>Expected:</strong> Show default video1 with code EM7K2X9Q</p>`;
+            html += `<p><strong>Actual:</strong> ${config.COMPLETION_CODE === 'EM7K2X9Q' ? '✅ Correct default behavior' : '❌ Wrong default behavior'}</p>`;
+        }
+        html += '</div>';
+        
+        resultsDiv.innerHTML = html;
+        
+        console.log('Config test results:', {
+            videoParam,
+            codeParam,
+            config
+        });
+    </script>
+</body>
+</html> 
