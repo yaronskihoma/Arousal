@@ -1,0 +1,5445 @@
+ {
+  "trackingData": [
+    {
+      "type": "GEO_INFO",
+      "geoData": {
+        "ip": "95.160.158.253",
+        "city": "Warsaw",
+        "region": "Mazovia",
+        "country": "PL",
+        "location": "52.2298,21.0118",
+        "postal": "00-002"
+      }
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.38,
+        "Fear": 0.55,
+        "Happy": 0.01,
+        "Neutral": 0,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.54,
+      "arousal": -0.12
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Sad",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.13,
+        "Fear": 0.07,
+        "Happy": 0.01,
+        "Neutral": 0.02,
+        "Sad": 0.76,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.49,
+      "arousal": -0.1
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Sad",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.15,
+        "Fear": 0.18,
+        "Happy": 0.01,
+        "Neutral": 0.07,
+        "Sad": 0.57,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.44,
+      "arousal": -0.24
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_ATTENTION",
+      "attention": 0.93
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.16,
+        "Fear": 0.59,
+        "Happy": 0.01,
+        "Neutral": 0.05,
+        "Sad": 0.18,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.43,
+      "arousal": -0.24
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_ATTENTION",
+      "attention": 0.93
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.16,
+        "Fear": 0.6,
+        "Happy": 0.01,
+        "Neutral": 0.04,
+        "Sad": 0.18,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.43,
+      "arousal": -0.24
+    },
+    {
+      "mediaTime": 0,
+      "type": "FACE_ATTENTION",
+      "attention": 0.92
+    },
+    {
+      "mediaTime": 0,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 0.032632,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 0.212645,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.16,
+        "Fear": 0.59,
+        "Happy": 0.01,
+        "Neutral": 0.05,
+        "Sad": 0.18,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 0.262126,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.43,
+      "arousal": -0.24
+    },
+    {
+      "mediaTime": 0.263651,
+      "type": "FACE_ATTENTION",
+      "attention": 0.92
+    },
+    {
+      "mediaTime": 0.273375,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 0.601292,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 0.752448,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.16,
+        "Fear": 0.59,
+        "Happy": 0.01,
+        "Neutral": 0.04,
+        "Sad": 0.18,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 0.788412,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.43,
+      "arousal": -0.24
+    },
+    {
+      "mediaTime": 0.789649,
+      "type": "FACE_ATTENTION",
+      "attention": 0.92
+    },
+    {
+      "mediaTime": 1.208483,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 1.434668,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.16,
+        "Fear": 0.59,
+        "Happy": 0.01,
+        "Neutral": 0.04,
+        "Sad": 0.18,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 1.479189,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.43,
+      "arousal": -0.24
+    },
+    {
+      "mediaTime": 1.482929,
+      "type": "FACE_ATTENTION",
+      "attention": 0.92
+    },
+    {
+      "mediaTime": 1.510561,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 1.832386,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 1.990745,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.16,
+        "Fear": 0.59,
+        "Happy": 0.01,
+        "Neutral": 0.04,
+        "Sad": 0.18,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 2.03418,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.43,
+      "arousal": -0.24
+    },
+    {
+      "mediaTime": 2.037383,
+      "type": "FACE_ATTENTION",
+      "attention": 0.92
+    },
+    {
+      "mediaTime": 2.301207,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 2.484195,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.06,
+        "Disgust": 0.35,
+        "Fear": 0.08,
+        "Happy": 0.25,
+        "Neutral": 0.13,
+        "Sad": 0.12,
+        "Surprise": 0.02
+      }
+    },
+    {
+      "mediaTime": 2.518,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.47,
+      "arousal": -0.19
+    },
+    {
+      "mediaTime": 2.51994,
+      "type": "FACE_ATTENTION",
+      "attention": 0.97
+    },
+    {
+      "mediaTime": 2.527435,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.39,
+        "Fear": 0.16,
+        "Happy": 0.11,
+        "Neutral": 0.09,
+        "Sad": 0.25,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.41,
+      "arousal": -0.39
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "FACE_ATTENTION",
+      "attention": 0.54
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.49,
+        "Fear": 0.25,
+        "Happy": 0.07,
+        "Neutral": 0.06,
+        "Sad": 0.13,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.43,
+      "arousal": -0.23
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "FACE_ATTENTION",
+      "attention": 0.81
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.49,
+        "Fear": 0.2,
+        "Happy": 0.1,
+        "Neutral": 0.07,
+        "Sad": 0.13,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.36,
+      "arousal": -0.47
+    },
+    {
+      "mediaTime": 3.690667,
+      "type": "FACE_ATTENTION",
+      "attention": 0.38
+    },
+    {
+      "mediaTime": 3.774809,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 3.800404,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 3.982048,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 3.982048,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.48,
+        "Fear": 0.2,
+        "Happy": 0.08,
+        "Neutral": 0.06,
+        "Sad": 0.18,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 4.019948,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.39,
+      "arousal": -0.45
+    },
+    {
+      "mediaTime": 4.020938,
+      "type": "FACE_ATTENTION",
+      "attention": 0.37
+    },
+    {
+      "mediaTime": 4.03132,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 4.28594,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 4.427855,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 4.435396,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.19,
+        "Fear": 0.4,
+        "Happy": 0.11,
+        "Neutral": 0.04,
+        "Sad": 0.24,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 4.457696,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.32,
+      "arousal": -0.37
+    },
+    {
+      "mediaTime": 4.459211,
+      "type": "FACE_ATTENTION",
+      "attention": 0.54
+    },
+    {
+      "mediaTime": 4.708051,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 4.848803,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 4.861061,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.27,
+        "Fear": 0.4,
+        "Happy": 0.09,
+        "Neutral": 0.03,
+        "Sad": 0.21,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 4.887576,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.3,
+      "arousal": -0.45
+    },
+    {
+      "mediaTime": 4.889254,
+      "type": "FACE_ATTENTION",
+      "attention": 0.4
+    },
+    {
+      "mediaTime": 5.140232,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 5.278659,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 5.286447,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.62,
+        "Fear": 0.16,
+        "Happy": 0.07,
+        "Neutral": 0.05,
+        "Sad": 0.09,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 5.308089,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.35,
+      "arousal": -0.35
+    },
+    {
+      "mediaTime": 5.309223,
+      "type": "FACE_ATTENTION",
+      "attention": 0.58
+    },
+    {
+      "mediaTime": 5.317508,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 5.562979,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 5.734334,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 5.744505,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.59,
+        "Fear": 0.05,
+        "Happy": 0.21,
+        "Neutral": 0.01,
+        "Sad": 0.12,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 5.76178,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.3,
+      "arousal": 0.06
+    },
+    {
+      "mediaTime": 5.762843,
+      "type": "FACE_ATTENTION",
+      "attention": 0.79
+    },
+    {
+      "mediaTime": 6.031439,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 6.20937,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 6.226367,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.75,
+        "Fear": 0.02,
+        "Happy": 0.17,
+        "Neutral": 0.02,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 6.249459,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.41,
+      "arousal": 0.35
+    },
+    {
+      "mediaTime": 6.250659,
+      "type": "FACE_ATTENTION",
+      "attention": 0.91
+    },
+    {
+      "mediaTime": 6.257596,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 6.559169,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 6.713455,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 6.730027,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.86,
+        "Fear": 0.02,
+        "Happy": 0.04,
+        "Neutral": 0.03,
+        "Sad": 0.04,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 6.749108,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.47,
+      "arousal": 0.34
+    },
+    {
+      "mediaTime": 6.75044,
+      "type": "FACE_ATTENTION",
+      "attention": 0.97
+    },
+    {
+      "mediaTime": 7.007375,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 7.124078,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 7.134145,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.78,
+        "Fear": 0.03,
+        "Happy": 0.11,
+        "Neutral": 0.04,
+        "Sad": 0.04,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 7.151838,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.42,
+      "arousal": 0.23
+    },
+    {
+      "mediaTime": 7.152971,
+      "type": "FACE_ATTENTION",
+      "attention": 0.99
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.85,
+        "Fear": 0.03,
+        "Happy": 0.03,
+        "Neutral": 0.02,
+        "Sad": 0.07,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.4,
+      "arousal": 0.12
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_ATTENTION",
+      "attention": 0.99
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.91,
+        "Fear": 0.02,
+        "Happy": 0.02,
+        "Neutral": 0.02,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.45,
+      "arousal": 0.26
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.88,
+        "Fear": 0.04,
+        "Happy": 0.03,
+        "Neutral": 0.02,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.49,
+      "arousal": 0.36
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.76,
+        "Fear": 0.02,
+        "Happy": 0.11,
+        "Neutral": 0.06,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.43,
+      "arousal": 0.22
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.61,
+        "Fear": 0.07,
+        "Happy": 0.11,
+        "Neutral": 0.12,
+        "Sad": 0.08,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.35,
+      "arousal": -0.26
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_ATTENTION",
+      "attention": 0.84
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Sad",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.33,
+        "Fear": 0.07,
+        "Happy": 0.08,
+        "Neutral": 0.14,
+        "Sad": 0.38,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.4,
+      "arousal": 0.03
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_ATTENTION",
+      "attention": 0.93
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_EMOTION",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.24,
+        "Fear": 0.21,
+        "Happy": 0.09,
+        "Neutral": 0.21,
+        "Sad": 0.24,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.46,
+      "arousal": 0.29
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_ATTENTION",
+      "attention": 0.96
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.05,
+        "Disgust": 0.68,
+        "Fear": 0.15,
+        "Happy": 0.02,
+        "Neutral": 0.06,
+        "Sad": 0.04,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.56,
+      "arousal": 0.48
+    },
+    {
+      "mediaTime": 7.16127,
+      "type": "FACE_ATTENTION",
+      "attention": 0.98
+    },
+    {
+      "mediaTime": 7.570303,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 7.608765,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 7.739498,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 7.754645,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.55,
+        "Fear": 0.05,
+        "Happy": 0.24,
+        "Neutral": 0.12,
+        "Sad": 0.02,
+        "Surprise": 0.02
+      }
+    },
+    {
+      "mediaTime": 7.773423,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.4,
+      "arousal": -0.2
+    },
+    {
+      "mediaTime": 7.774686,
+      "type": "FACE_ATTENTION",
+      "attention": 0.84
+    },
+    {
+      "mediaTime": 8.030491,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 8.158106,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 8.170472,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.5,
+        "Fear": 0.09,
+        "Happy": 0.14,
+        "Neutral": 0.18,
+        "Sad": 0.06,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 8.202417,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.48,
+      "arousal": 0.3
+    },
+    {
+      "mediaTime": 8.203396,
+      "type": "FACE_ATTENTION",
+      "attention": 0.92
+    },
+    {
+      "mediaTime": 8.209467,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 8.426842,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 8.561237,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 8.570745,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.92,
+        "Fear": 0.02,
+        "Happy": 0.02,
+        "Neutral": 0.02,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 8.590067,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.52,
+      "arousal": 0.41
+    },
+    {
+      "mediaTime": 8.591323,
+      "type": "FACE_ATTENTION",
+      "attention": 0.97
+    },
+    {
+      "mediaTime": 8.80468,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 8.907957,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 8.917701,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.94,
+        "Fear": 0.01,
+        "Happy": 0.02,
+        "Neutral": 0.02,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 8.934366,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.44,
+      "arousal": 0.37
+    },
+    {
+      "mediaTime": 8.935579,
+      "type": "FACE_ATTENTION",
+      "attention": 0.98
+    },
+    {
+      "mediaTime": 8.955905,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 9.159284,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 9.273948,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 9.286118,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.78,
+        "Fear": 0.04,
+        "Happy": 0.11,
+        "Neutral": 0.03,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 9.302163,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.36,
+      "arousal": 0.36
+    },
+    {
+      "mediaTime": 9.303158,
+      "type": "FACE_ATTENTION",
+      "attention": 0.99
+    },
+    {
+      "mediaTime": 9.556334,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 9.704503,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 9.721446,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.78,
+        "Fear": 0.02,
+        "Happy": 0.11,
+        "Neutral": 0.05,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 9.759695,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.43,
+      "arousal": 0.33
+    },
+    {
+      "mediaTime": 9.761688,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 10.013225,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 10.171056,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 10.182431,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.95,
+        "Fear": 0,
+        "Happy": 0.03,
+        "Neutral": 0,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 10.203887,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.44,
+      "arousal": 0.43
+    },
+    {
+      "mediaTime": 10.205206,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 10.211426,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.93,
+        "Fear": 0.01,
+        "Happy": 0.03,
+        "Neutral": 0.02,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.51,
+      "arousal": 0.42
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.96,
+        "Fear": 0,
+        "Happy": 0.02,
+        "Neutral": 0,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.5,
+      "arousal": 0.44
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.96,
+        "Fear": 0,
+        "Happy": 0.02,
+        "Neutral": 0,
+        "Sad": 0,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.54,
+      "arousal": 0.49
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.85,
+        "Fear": 0.01,
+        "Happy": 0.12,
+        "Neutral": 0.01,
+        "Sad": 0,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.43,
+      "arousal": 0.46
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.89,
+        "Fear": 0.01,
+        "Happy": 0.09,
+        "Neutral": 0.01,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.38,
+      "arousal": 0.43
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.9,
+        "Fear": 0.01,
+        "Happy": 0.04,
+        "Neutral": 0.03,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.5,
+      "arousal": 0.43
+    },
+    {
+      "mediaTime": 10.400309,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 10.870439,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 11.034939,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 11.053705,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.87,
+        "Fear": 0.04,
+        "Happy": 0.04,
+        "Neutral": 0.04,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 11.10077,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.52,
+      "arousal": 0.43
+    },
+    {
+      "mediaTime": 11.102138,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 11.110663,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 11.383931,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 11.514931,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 11.54301,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.87,
+        "Fear": 0.03,
+        "Happy": 0.04,
+        "Neutral": 0.04,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 11.56903,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.48,
+      "arousal": 0.46
+    },
+    {
+      "mediaTime": 11.570031,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 11.811248,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 11.935594,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 11.946181,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.04,
+        "Disgust": 0.73,
+        "Fear": 0.04,
+        "Happy": 0.1,
+        "Neutral": 0.06,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 11.967787,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.42,
+      "arousal": 0.41
+    },
+    {
+      "mediaTime": 11.968937,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 11.977969,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 12.203421,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 12.31503,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 12.336375,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.89,
+        "Fear": 0.01,
+        "Happy": 0.05,
+        "Neutral": 0.02,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 12.354915,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.45,
+      "arousal": 0.41
+    },
+    {
+      "mediaTime": 12.358383,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 12.571446,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 12.676739,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 12.693896,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.82,
+        "Fear": 0.02,
+        "Happy": 0.07,
+        "Neutral": 0.05,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 12.723474,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.42,
+      "arousal": 0.37
+    },
+    {
+      "mediaTime": 12.724622,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 12.947001,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 13.050937,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 13.067448,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.73,
+        "Fear": 0.03,
+        "Happy": 0.14,
+        "Neutral": 0.05,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 13.097867,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.39,
+      "arousal": 0.4
+    },
+    {
+      "mediaTime": 13.104137,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 13.104137,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 13.3491,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 13.489223,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 13.503145,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.7,
+        "Fear": 0.03,
+        "Happy": 0.18,
+        "Neutral": 0.05,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 13.53907,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.34,
+      "arousal": 0.42
+    },
+    {
+      "mediaTime": 13.540476,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 13.820074,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 13.934181,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 13.948963,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.83,
+        "Fear": 0.03,
+        "Happy": 0.07,
+        "Neutral": 0.04,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 13.971352,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.43,
+      "arousal": 0.41
+    },
+    {
+      "mediaTime": 13.972481,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 13.978252,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.81,
+        "Fear": 0.02,
+        "Happy": 0.08,
+        "Neutral": 0.04,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.44,
+      "arousal": 0.37
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.75,
+        "Fear": 0.02,
+        "Happy": 0.16,
+        "Neutral": 0.03,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.35,
+      "arousal": 0.43
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.8,
+        "Fear": 0.05,
+        "Happy": 0.09,
+        "Neutral": 0.03,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.37,
+      "arousal": 0.44
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.61,
+        "Fear": 0.23,
+        "Happy": 0.08,
+        "Neutral": 0.05,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.41,
+      "arousal": 0.39
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.64,
+        "Fear": 0.18,
+        "Happy": 0.04,
+        "Neutral": 0.08,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.42,
+      "arousal": 0.35
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.65,
+        "Fear": 0.12,
+        "Happy": 0.04,
+        "Neutral": 0.09,
+        "Sad": 0.09,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.47,
+      "arousal": -0.25
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_ATTENTION",
+      "attention": 0.83
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.56,
+        "Fear": 0.2,
+        "Happy": 0.09,
+        "Neutral": 0.09,
+        "Sad": 0.04,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.38,
+      "arousal": 0.26
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_ATTENTION",
+      "attention": 0.93
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.21,
+        "Fear": 0.62,
+        "Happy": 0.04,
+        "Neutral": 0.06,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.48,
+      "arousal": 0.49
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_ATTENTION",
+      "attention": 0.97
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.43,
+        "Fear": 0.45,
+        "Happy": 0.03,
+        "Neutral": 0.04,
+        "Sad": 0.04,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.52,
+      "arousal": 0.45
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_ATTENTION",
+      "attention": 0.99
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.28,
+        "Fear": 0.45,
+        "Happy": 0.03,
+        "Neutral": 0.14,
+        "Sad": 0.08,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.53,
+      "arousal": 0.53
+    },
+    {
+      "mediaTime": 14.058489,
+      "type": "FACE_ATTENTION",
+      "attention": 0.99
+    },
+    {
+      "mediaTime": 14.457103,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 14.579663,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 14.61991,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.04,
+        "Disgust": 0.36,
+        "Fear": 0.43,
+        "Happy": 0.02,
+        "Neutral": 0.11,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 14.658902,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.55,
+      "arousal": 0.53
+    },
+    {
+      "mediaTime": 14.662654,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 14.672986,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 14.676265,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 14.739427,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 14.768791,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.46,
+        "Fear": 0.17,
+        "Happy": 0.02,
+        "Neutral": 0.2,
+        "Sad": 0.12,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 14.806542,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.53,
+      "arousal": 0.44
+    },
+    {
+      "mediaTime": 14.807559,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 15.082932,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 15.191708,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 15.203896,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.04,
+        "Disgust": 0.29,
+        "Fear": 0.33,
+        "Happy": 0.04,
+        "Neutral": 0.23,
+        "Sad": 0.06,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 15.231514,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.51,
+      "arousal": 0.39
+    },
+    {
+      "mediaTime": 15.232497,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 15.251522,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 15.493099,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 15.611442,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 15.767289,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.56,
+        "Fear": 0.19,
+        "Happy": 0.02,
+        "Neutral": 0.13,
+        "Sad": 0.1,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 15.835699,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.52,
+      "arousal": 0.42
+    },
+    {
+      "mediaTime": 15.837285,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 16.168736,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 16.286175,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 16.29815,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.4,
+        "Fear": 0.39,
+        "Happy": 0.03,
+        "Neutral": 0.07,
+        "Sad": 0.07,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 16.336058,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.56,
+      "arousal": 0.49
+    },
+    {
+      "mediaTime": 16.33704,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 16.343661,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 16.668041,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 16.797168,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 16.81624,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.47,
+        "Fear": 0.28,
+        "Happy": 0.05,
+        "Neutral": 0.09,
+        "Sad": 0.08,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 16.838105,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.53,
+      "arousal": 0.44
+    },
+    {
+      "mediaTime": 16.838999,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 17.131478,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 17.250172,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 17.274059,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.65,
+        "Fear": 0.12,
+        "Happy": 0.02,
+        "Neutral": 0.1,
+        "Sad": 0.08,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 17.29466,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.55,
+      "arousal": 0.48
+    },
+    {
+      "mediaTime": 17.29652,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 17.309666,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 17.603312,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 17.705576,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 17.719459,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.83,
+        "Fear": 0.03,
+        "Happy": 0.04,
+        "Neutral": 0.05,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 17.751206,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.56,
+      "arousal": 0.51
+    },
+    {
+      "mediaTime": 17.753217,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.41,
+        "Fear": 0.44,
+        "Happy": 0.02,
+        "Neutral": 0.07,
+        "Sad": 0.04,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.55,
+      "arousal": 0.47
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.63,
+        "Fear": 0.12,
+        "Happy": 0.02,
+        "Neutral": 0.12,
+        "Sad": 0.08,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.57,
+      "arousal": 0.5
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.04,
+        "Disgust": 0.63,
+        "Fear": 0.21,
+        "Happy": 0.02,
+        "Neutral": 0.06,
+        "Sad": 0.04,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.58,
+      "arousal": 0.54
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.04,
+        "Disgust": 0.51,
+        "Fear": 0.19,
+        "Happy": 0.03,
+        "Neutral": 0.12,
+        "Sad": 0.11,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.56,
+      "arousal": 0.5
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.24,
+        "Fear": 0.58,
+        "Happy": 0.03,
+        "Neutral": 0.08,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.53,
+      "arousal": 0.45
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.04,
+        "Disgust": 0.47,
+        "Fear": 0.35,
+        "Happy": 0.03,
+        "Neutral": 0.08,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.54,
+      "arousal": 0.49
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.65,
+        "Fear": 0.15,
+        "Happy": 0.03,
+        "Neutral": 0.04,
+        "Sad": 0.1,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.41,
+      "arousal": -0.14
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_ATTENTION",
+      "attention": 0.7
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.04,
+        "Disgust": 0.66,
+        "Fear": 0.17,
+        "Happy": 0.02,
+        "Neutral": 0.07,
+        "Sad": 0.04,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.54,
+      "arousal": 0.44
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_ATTENTION",
+      "attention": 0.88
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.05,
+        "Disgust": 0.47,
+        "Fear": 0.26,
+        "Happy": 0.03,
+        "Neutral": 0.12,
+        "Sad": 0.07,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.56,
+      "arousal": 0.51
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_ATTENTION",
+      "attention": 0.94
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.07,
+        "Disgust": 0.32,
+        "Fear": 0.32,
+        "Happy": 0.02,
+        "Neutral": 0.17,
+        "Sad": 0.11,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.58,
+      "arousal": 0.57
+    },
+    {
+      "mediaTime": 17.758823,
+      "type": "FACE_ATTENTION",
+      "attention": 0.97
+    },
+    {
+      "mediaTime": 18.13354,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 18.333702,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.64,
+        "Fear": 0.1,
+        "Happy": 0.02,
+        "Neutral": 0.13,
+        "Sad": 0.08,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.58,
+      "arousal": 0.56
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "FACE_ATTENTION",
+      "attention": 0.98
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.66,
+        "Fear": 0.09,
+        "Happy": 0.02,
+        "Neutral": 0.13,
+        "Sad": 0.08,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.58,
+      "arousal": 0.56
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "FACE_ATTENTION",
+      "attention": 0.99
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.66,
+        "Fear": 0.09,
+        "Happy": 0.02,
+        "Neutral": 0.13,
+        "Sad": 0.08,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.58,
+      "arousal": 0.56
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 18.368,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 18.568691,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 18.677253,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 18.688903,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.3,
+        "Fear": 0.39,
+        "Happy": 0.04,
+        "Neutral": 0.14,
+        "Sad": 0.11,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 18.713214,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.55,
+      "arousal": 0.48
+    },
+    {
+      "mediaTime": 18.723692,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 19.030921,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 19.12525,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 19.136447,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Fear",
+      "emotions": {
+        "Angry": 0.06,
+        "Disgust": 0.31,
+        "Fear": 0.35,
+        "Happy": 0.03,
+        "Neutral": 0.18,
+        "Sad": 0.07,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 19.173741,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.54,
+      "arousal": 0.45
+    },
+    {
+      "mediaTime": 19.174729,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 19.18384,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 19.444515,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 19.574035,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 19.58803,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.07,
+        "Disgust": 0.35,
+        "Fear": 0.35,
+        "Happy": 0.03,
+        "Neutral": 0.15,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 19.636613,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.54,
+      "arousal": 0.46
+    },
+    {
+      "mediaTime": 19.637519,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 19.945465,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 20.072502,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 20.094743,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.39,
+        "Fear": 0.34,
+        "Happy": 0.02,
+        "Neutral": 0.13,
+        "Sad": 0.08,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 20.145467,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.53,
+      "arousal": 0.5
+    },
+    {
+      "mediaTime": 20.146525,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 20.152338,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.04,
+        "Disgust": 0.48,
+        "Fear": 0.28,
+        "Happy": 0.02,
+        "Neutral": 0.11,
+        "Sad": 0.07,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.58,
+      "arousal": 0.54
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.48,
+        "Fear": 0.29,
+        "Happy": 0.02,
+        "Neutral": 0.09,
+        "Sad": 0.08,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.57,
+      "arousal": 0.53
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.46,
+        "Fear": 0.22,
+        "Happy": 0.04,
+        "Neutral": 0.15,
+        "Sad": 0.1,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.54,
+      "arousal": 0.46
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.65,
+        "Fear": 0.14,
+        "Happy": 0.03,
+        "Neutral": 0.06,
+        "Sad": 0.09,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.54,
+      "arousal": 0.45
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.67,
+        "Fear": 0.16,
+        "Happy": 0.05,
+        "Neutral": 0.05,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.56,
+      "arousal": 0.49
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.82,
+        "Fear": 0.02,
+        "Happy": 0.05,
+        "Neutral": 0.03,
+        "Sad": 0.07,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.33,
+      "arousal": 0.48
+    },
+    {
+      "mediaTime": 20.247951,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 20.725912,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 20.796833,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 20.944432,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 20.982885,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.8,
+        "Fear": 0.03,
+        "Happy": 0.04,
+        "Neutral": 0.04,
+        "Sad": 0.09,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 21.013662,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.4,
+      "arousal": 0.49
+    },
+    {
+      "mediaTime": 21.015285,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 21.023028,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 21.277344,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 21.367995,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 21.379462,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.79,
+        "Fear": 0.04,
+        "Happy": 0.03,
+        "Neutral": 0.06,
+        "Sad": 0.08,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 21.423182,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.47,
+      "arousal": 0.5
+    },
+    {
+      "mediaTime": 21.424796,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 21.739684,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 21.861786,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 21.877256,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.86,
+        "Fear": 0.02,
+        "Happy": 0.02,
+        "Neutral": 0.03,
+        "Sad": 0.06,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 21.897533,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.47,
+      "arousal": 0.4
+    },
+    {
+      "mediaTime": 21.898623,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 22.164588,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 22.261619,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 22.284233,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.78,
+        "Fear": 0.05,
+        "Happy": 0.03,
+        "Neutral": 0.05,
+        "Sad": 0.09,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 22.314095,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.42,
+      "arousal": 0.38
+    },
+    {
+      "mediaTime": 22.315386,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 22.324101,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 22.551601,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 22.664803,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 22.680809,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.81,
+        "Fear": 0.07,
+        "Happy": 0.02,
+        "Neutral": 0.05,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 22.700447,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.45,
+      "arousal": 0.37
+    },
+    {
+      "mediaTime": 22.70189,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 22.946129,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 23.047075,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 23.084583,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.67,
+        "Fear": 0.15,
+        "Happy": 0.03,
+        "Neutral": 0.09,
+        "Sad": 0.04,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 23.105458,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.51,
+      "arousal": 0.44
+    },
+    {
+      "mediaTime": 23.106609,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 23.140242,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 23.394298,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 23.500453,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 23.515619,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.78,
+        "Fear": 0.06,
+        "Happy": 0.03,
+        "Neutral": 0.07,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 23.539681,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.49,
+      "arousal": 0.45
+    },
+    {
+      "mediaTime": 23.540853,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.76,
+        "Fear": 0.11,
+        "Happy": 0.03,
+        "Neutral": 0.07,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.49,
+      "arousal": 0.44
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.78,
+        "Fear": 0.08,
+        "Happy": 0.03,
+        "Neutral": 0.07,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.49,
+      "arousal": 0.45
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.87,
+        "Fear": 0.06,
+        "Happy": 0.02,
+        "Neutral": 0.03,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.53,
+      "arousal": 0.52
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.91,
+        "Fear": 0.03,
+        "Happy": 0.02,
+        "Neutral": 0.02,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.52,
+      "arousal": 0.56
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.71,
+        "Fear": 0.17,
+        "Happy": 0.04,
+        "Neutral": 0.03,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.52,
+      "arousal": 0.52
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.66,
+        "Fear": 0.18,
+        "Happy": 0.05,
+        "Neutral": 0.05,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.4,
+      "arousal": 0.44
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.83,
+        "Fear": 0.04,
+        "Happy": 0.03,
+        "Neutral": 0.05,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.34,
+      "arousal": 0.25
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_ATTENTION",
+      "attention": 0.81
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.44,
+        "Fear": 0.32,
+        "Happy": 0.09,
+        "Neutral": 0.08,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.29,
+      "arousal": 0.3
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_ATTENTION",
+      "attention": 0.92
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.04,
+        "Disgust": 0.47,
+        "Fear": 0.27,
+        "Happy": 0.05,
+        "Neutral": 0.08,
+        "Sad": 0.07,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.43,
+      "arousal": 0.42
+    },
+    {
+      "mediaTime": 23.639184,
+      "type": "FACE_ATTENTION",
+      "attention": 0.97
+    },
+    {
+      "mediaTime": 24.333316,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 24.465862,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 24.478622,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.55,
+        "Fear": 0.28,
+        "Happy": 0.03,
+        "Neutral": 0.07,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 24.529016,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.57,
+      "arousal": 0.51
+    },
+    {
+      "mediaTime": 24.529016,
+      "type": "FACE_ATTENTION",
+      "attention": 0.99
+    },
+    {
+      "mediaTime": 24.533425,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 24.816146,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 24.946426,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 24.96766,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.81,
+        "Fear": 0.04,
+        "Happy": 0.03,
+        "Neutral": 0.03,
+        "Sad": 0.06,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 25.007775,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.58,
+      "arousal": 0.52
+    },
+    {
+      "mediaTime": 25.009008,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 25.276259,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 25.399848,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 25.429744,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.76,
+        "Fear": 0.15,
+        "Happy": 0.03,
+        "Neutral": 0.04,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 25.452833,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.55,
+      "arousal": 0.53
+    },
+    {
+      "mediaTime": 25.453969,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 25.460173,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 25.703694,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 25.813745,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 25.831735,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.81,
+        "Fear": 0.11,
+        "Happy": 0.02,
+        "Neutral": 0.03,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 25.854353,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.49,
+      "arousal": 0.51
+    },
+    {
+      "mediaTime": 25.855975,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 26.074432,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 26.182136,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 26.196143,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.7,
+        "Fear": 0.15,
+        "Happy": 0.08,
+        "Neutral": 0.04,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 26.219055,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.45,
+      "arousal": 0.47
+    },
+    {
+      "mediaTime": 26.220318,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 26.419095,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 26.521902,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 26.542945,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.81,
+        "Fear": 0.1,
+        "Happy": 0.03,
+        "Neutral": 0.04,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 26.569019,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.46,
+      "arousal": 0.52
+    },
+    {
+      "mediaTime": 26.570477,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 26.575912,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 26.810522,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 26.925031,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 26.934449,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.74,
+        "Fear": 0.09,
+        "Happy": 0.08,
+        "Neutral": 0.05,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 26.964401,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.4,
+      "arousal": 0.48
+    },
+    {
+      "mediaTime": 26.965412,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.86,
+        "Fear": 0.08,
+        "Happy": 0.02,
+        "Neutral": 0.02,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.47,
+      "arousal": 0.52
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.7,
+        "Fear": 0.19,
+        "Happy": 0.03,
+        "Neutral": 0.04,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.45,
+      "arousal": 0.49
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.78,
+        "Fear": 0.14,
+        "Happy": 0.03,
+        "Neutral": 0.03,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.46,
+      "arousal": 0.52
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.67,
+        "Fear": 0.22,
+        "Happy": 0.04,
+        "Neutral": 0.04,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.46,
+      "arousal": 0.53
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.85,
+        "Fear": 0.03,
+        "Happy": 0.03,
+        "Neutral": 0.04,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.44,
+      "arousal": 0.35
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.73,
+        "Fear": 0.13,
+        "Happy": 0.05,
+        "Neutral": 0.05,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.37,
+      "arousal": 0.44
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.69,
+        "Fear": 0.1,
+        "Happy": 0.1,
+        "Neutral": 0.05,
+        "Sad": 0.04,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.35,
+      "arousal": 0.43
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.8,
+        "Fear": 0.1,
+        "Happy": 0.04,
+        "Neutral": 0.02,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.45,
+      "arousal": 0.46
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.88,
+        "Fear": 0.04,
+        "Happy": 0.02,
+        "Neutral": 0.04,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.46,
+      "arousal": 0.51
+    },
+    {
+      "mediaTime": 27.177465,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 27.601147,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 27.739988,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 27.763152,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.84,
+        "Fear": 0.08,
+        "Happy": 0.03,
+        "Neutral": 0.03,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 27.80238,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.5,
+      "arousal": 0.55
+    },
+    {
+      "mediaTime": 27.807042,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 27.818138,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 28.045149,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 28.180462,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 28.203614,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.82,
+        "Fear": 0.04,
+        "Happy": 0.05,
+        "Neutral": 0.05,
+        "Sad": 0.04,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 28.224417,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.28,
+      "arousal": 0.46
+    },
+    {
+      "mediaTime": 28.225564,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 28.482906,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 28.612513,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 28.630524,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.67,
+        "Fear": 0.17,
+        "Happy": 0.04,
+        "Neutral": 0.07,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 28.667778,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.41,
+      "arousal": 0.51
+    },
+    {
+      "mediaTime": 28.668947,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 28.676248,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 28.903382,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 29.039824,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 29.050959,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.77,
+        "Fear": 0.11,
+        "Happy": 0.03,
+        "Neutral": 0.05,
+        "Sad": 0.01,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 29.071087,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.47,
+      "arousal": 0.52
+    },
+    {
+      "mediaTime": 29.072078,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 29.284621,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 29.365397,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 29.393279,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.03,
+        "Disgust": 0.65,
+        "Fear": 0.18,
+        "Happy": 0.04,
+        "Neutral": 0.07,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 29.412485,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.46,
+      "arousal": 0.5
+    },
+    {
+      "mediaTime": 29.413632,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 29.633185,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 29.738967,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 29.752546,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.81,
+        "Fear": 0.08,
+        "Happy": 0.03,
+        "Neutral": 0.05,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 29.790043,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.5,
+      "arousal": 0.55
+    },
+    {
+      "mediaTime": 29.792379,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 29.802375,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 30.01262,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 30.111677,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 30.125396,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.88,
+        "Fear": 0.03,
+        "Happy": 0.02,
+        "Neutral": 0.02,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 30.152385,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.51,
+      "arousal": 0.55
+    },
+    {
+      "mediaTime": 30.158654,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 30.386036,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 30.476425,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 30.503437,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.82,
+        "Fear": 0.07,
+        "Happy": 0.01,
+        "Neutral": 0.05,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 30.540985,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.55,
+      "arousal": 0.54
+    },
+    {
+      "mediaTime": 30.542281,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 30.789077,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 30.925021,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 30.934807,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.78,
+        "Fear": 0.13,
+        "Happy": 0.02,
+        "Neutral": 0.03,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 30.950586,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.56,
+      "arousal": 0.52
+    },
+    {
+      "mediaTime": 30.951795,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.04,
+        "Disgust": 0.63,
+        "Fear": 0.21,
+        "Happy": 0.05,
+        "Neutral": 0.06,
+        "Sad": 0.02,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.47,
+      "arousal": 0.48
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.89,
+        "Fear": 0.03,
+        "Happy": 0.01,
+        "Neutral": 0.02,
+        "Sad": 0.04,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.56,
+      "arousal": 0.53
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.68,
+        "Fear": 0.13,
+        "Happy": 0.03,
+        "Neutral": 0.08,
+        "Sad": 0.06,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.5,
+      "arousal": 0.47
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 30.95841,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 31.273942,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 31.337369,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 31.349398,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.04,
+        "Disgust": 0.65,
+        "Fear": 0.14,
+        "Happy": 0.06,
+        "Neutral": 0.08,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 31.389721,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.36,
+      "arousal": 0.43
+    },
+    {
+      "mediaTime": 31.395534,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 31.693626,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 31.850221,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 31.887313,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.04,
+        "Disgust": 0.43,
+        "Fear": 0.31,
+        "Happy": 0.06,
+        "Neutral": 0.12,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 31.920458,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.47,
+      "arousal": 0.41
+    },
+    {
+      "mediaTime": 31.921515,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 31.926856,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 32.265636,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 32.420919,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 32.437973,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.05,
+        "Disgust": 0.66,
+        "Fear": 0.07,
+        "Happy": 0.12,
+        "Neutral": 0.06,
+        "Sad": 0.05,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 32.475006,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.35,
+      "arousal": 0.44
+    },
+    {
+      "mediaTime": 32.476799,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 32.751831,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 32.847818,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 32.860357,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.74,
+        "Fear": 0.14,
+        "Happy": 0.05,
+        "Neutral": 0.03,
+        "Sad": 0.03,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 32.880865,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.23,
+      "arousal": 0.47
+    },
+    {
+      "mediaTime": 32.881785,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 32.893301,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 33.083119,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 33.205437,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 33.221819,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.76,
+        "Fear": 0.12,
+        "Happy": 0.02,
+        "Neutral": 0.04,
+        "Sad": 0.06,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 33.244599,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.37,
+      "arousal": 0.46
+    },
+    {
+      "mediaTime": 33.245522,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 33.477378,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 33.572712,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.62,
+        "Fear": 0.14,
+        "Happy": 0.05,
+        "Neutral": 0.11,
+        "Sad": 0.07,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.42,
+      "arousal": 0.43
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_ATTENTION",
+      "attention": 1
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.02,
+        "Disgust": 0.45,
+        "Fear": 0.06,
+        "Happy": 0.21,
+        "Neutral": 0.1,
+        "Sad": 0.17,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.18,
+      "arousal": 0.07
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_ATTENTION",
+      "attention": 0.78
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0.01,
+        "Disgust": 0.47,
+        "Fear": 0.15,
+        "Happy": 0.05,
+        "Neutral": 0.03,
+        "Sad": 0.29,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.23,
+      "arousal": 0.21
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_ATTENTION",
+      "attention": 0.89
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.41,
+        "Fear": 0.05,
+        "Happy": 0.26,
+        "Neutral": 0.07,
+        "Sad": 0.21,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": 0.25,
+      "arousal": -0.12
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_ATTENTION",
+      "attention": 0.94
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "DATA_AGGREGATOR"
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_DETECTOR",
+      "totalFaces": 1,
+      "status": "INIT"
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "ALARM_NO_FACE",
+      "alarmTriggered": true
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_EMOTION",
+      "dominantEmotion": "Disgust",
+      "emotions": {
+        "Angry": 0,
+        "Disgust": 0.54,
+        "Fear": 0.12,
+        "Happy": 0.03,
+        "Neutral": 0.17,
+        "Sad": 0.13,
+        "Surprise": 0
+      }
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_AROUSAL_VALENCE",
+      "valence": -0.28,
+      "arousal": 0.3
+    },
+    {
+      "mediaTime": 33.6,
+      "type": "FACE_ATTENTION",
+      "attention": 0.97
+    }
+  ],
+  "deviceDetails": {
+    "browser": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/26.0 Chrome/122.0.0.0 Mobile Safari/537.36",
+    "platform": "Linux armv81",
+    "date": "3 October 2024 at 13:36:59"
+  }
+}

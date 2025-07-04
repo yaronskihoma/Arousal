@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video & Morphcast Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    video {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px 0;
+    }
+    .status {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+    .success { background: #d4edda; color: #155724; }
+    .error { background: #f8d7da; color: #721c24; }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Emotion Tracking V2 - Test Page</h1>
+  
+  <h2>Configuration Status</h2>
+  <div id="configStatus" class="status">Loading configuration...</div>
+  
+  <h2>Video Test</h2>
+  <video id="testVideo" controls preload="auto">
+    <source id="testVideoSource" src="" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div id="videoStatus" class="status">Video not loaded</div>
+  
+  <h2>Morphcast API Test</h2>
+  <div id="morphcastStatus" class="status">Not initialized</div>
+  <button id="testMorphcastBtn">Test Morphcast</button>
+  
+  <h2>Camera Test</h2>
+  <div id="cameraStatus" class="status">Not tested</div>
+  <button id="testCameraBtn">Test Camera</button>
+  
+  <h2>Debug Information</h2>
+  <div id="debugInfo" class="status">
+    <pre id="debugText">No debug info yet</pre>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+  <script src="https://ai-sdk.morphcast.com/v1.16/ai-sdk.js?v2"></script>
+  
+  <!-- Configuration -->
+  <script>
+    console.log('🔧 Loading test configuration...');
+    
+    const config = {
+      VIDEO_URL: "https://assets.homa-cloud.com/cm0wqgm1d002gdslcdl3hq3yl/f4bea092-1f69-4f99-8d7a-fc8fb52ac610/CAY_R91_V1_WW_VID_1080x1920_24s.mp4",
+      TASK_ID: "TASK-TEST",
+      COMPLETION_CODE: "TEST123",
+      PRIVACY_POLICY_URL: "https://example.com/privacy",
+      SUPABASE_URL: "https://xpzyupzfgzfvmjttfqcs.supabase.co",
+      SUPABASE_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhwenl1cHpmZ3pmdm1qdHRmcWNzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc3NzEyNzMsImV4cCI6MjA0MzM0NzI3M30.6hGJjRPnG1pGH8dZCkfgTOWa5O2WfUJFSKjOiZGJZZU",
+      MORPHCAST_LICENSE: "ap95c1923492e8512306644ca7fea0e66e7c27a47b97bb",
+      TIMELINE_DURATION: 30,
+      TIMELINE_INTERVAL: 1,
+      DEBUG_MODE: true,
+      CONSOLE_LOGGING: true
+    };
+    
+    console.log('✅ Test configuration loaded');
+    
+    const debugInfo = {
+      browser: navigator.userAgent,
+      timestamp: new Date().toISOString(),
+      config: config
+    };
+    
+    // Display configuration status
+    const configStatus = document.getElementById('configStatus');
+    const videoStatus = document.getElementById('videoStatus');
+    const morphcastStatus = document.getElementById('morphcastStatus');
+    const cameraStatus = document.getElementById('cameraStatus');
+    const debugText = document.getElementById('debugText');
+    
+    // Update debug info
+    debugText.textContent = JSON.stringify(debugInfo, null, 2);
+    
+    // Test configuration
+    if (config.VIDEO_URL && config.MORPHCAST_LICENSE && config.SUPABASE_URL) {
+      configStatus.textContent = '✅ Configuration loaded successfully';
+      configStatus.className = 'status success';
+    } else {
+      configStatus.textContent = '❌ Configuration incomplete - check config.js';
+      configStatus.className = 'status error';
+    }
+    
+    // Test video loading
+    const testVideo = document.getElementById('testVideo');
+    const testVideoSource = document.getElementById('testVideoSource');
+    
+    if (config.VIDEO_URL) {
+      testVideoSource.src = config.VIDEO_URL;
+      testVideo.load();
+      
+      testVideo.addEventListener('loadedmetadata', () => {
+        videoStatus.textContent = `✅ Video loaded successfully (${testVideo.duration.toFixed(1)}s duration)`;
+        videoStatus.className = 'status success';
+      });
+      
+      testVideo.addEventListener('error', (e) => {
+        videoStatus.textContent = '❌ Video failed to load - check URL or CORS settings';
+        videoStatus.className = 'status error';
+        console.error('Video error:', e);
+      });
+      
+      testVideo.addEventListener('canplay', () => {
+        console.log('Video can play');
+      });
+    } else {
+      videoStatus.textContent = '❌ No video URL configured';
+      videoStatus.className = 'status error';
+    }
+    
+    // Test Morphcast
+    document.getElementById('testMorphcastBtn').addEventListener('click', async () => {
+      try {
+        morphcastStatus.textContent = '⏳ Initializing Morphcast...';
+        morphcastStatus.className = 'status';
+        
+        // Debug origin detection
+        console.log('🔍 Debug Info:');
+        console.log('window.location.href:', window.location.href);
+        console.log('window.location.origin:', window.location.origin);
+        console.log('window.location.protocol:', window.location.protocol);
+        console.log('window.location.hostname:', window.location.hostname);
+        console.log('window.location.port:', window.location.port);
+        
+        if (typeof CY === 'undefined') {
+          throw new Error('Morphcast SDK not loaded');
+        }
+        
+        console.log('🧠 Creating Morphcast loader...');
+        const morphcastLoader = CY.loader()
+          .licenseKey(config.MORPHCAST_LICENSE)
+          .addModule(CY.modules().FACE_DETECTOR.name);
+        
+        console.log('📦 Loading Morphcast modules...');
+        const { start, stop } = await morphcastLoader.load();
+        
+        morphcastStatus.textContent = '✅ Morphcast initialized successfully';
+        morphcastStatus.className = 'status success';
+        
+        console.log('🎯 Testing start/stop...');
+        // Test start/stop
+        await start();
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        await stop();
+        console.log('✅ Start/stop test completed');
+        
+      } catch (error) {
+        morphcastStatus.textContent = `❌ Morphcast failed: ${error.message}`;
+        morphcastStatus.className = 'status error';
+        console.error('❌ Morphcast error:', error);
+        console.error('Error stack:', error.stack);
+      }
+    });
+    
+    // Test camera
+    document.getElementById('testCameraBtn').addEventListener('click', async () => {
+      try {
+        cameraStatus.textContent = '⏳ Requesting camera access...';
+        cameraStatus.className = 'status';
+        
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        stream.getTracks().forEach(track => track.stop());
+        
+        cameraStatus.textContent = '✅ Camera access granted';
+        cameraStatus.className = 'status success';
+        
+      } catch (error) {
+        cameraStatus.textContent = `❌ Camera access denied: ${error.message}`;
+        cameraStatus.className = 'status error';
+        console.error('Camera error:', error);
+      }
+    });
+  </script>
+</body>
+</html> 

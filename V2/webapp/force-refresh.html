@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Cache Refresh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 100px auto;
+            text-align: center;
+            padding: 20px;
+        }
+        .loading {
+            font-size: 18px;
+            color: #666;
+        }
+        .links {
+            margin-top: 30px;
+        }
+        .links a {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .links a:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔄 Clearing Cache and Restarting</h1>
+    <div class="loading">
+        <p>Forcing cache refresh to fix Morphcast origin detection...</p>
+        <p id="countdown">Redirecting in <span id="timer">3</span> seconds...</p>
+    </div>
+    
+    <div class="links">
+        <h3>Or choose a test page:</h3>
+        <a href="simple-morphcast-test.html?t=${Date.now()}">🧪 Simple Test</a>
+        <a href="test.html?t=${Date.now()}">📊 Full Test</a>
+        <a href="debug.html?t=${Date.now()}">🔍 Debug</a>
+        <a href="video-test.html?t=${Date.now()}">🎬 Video Only</a>
+    </div>
+
+    <script>
+        // Force cache clear
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) {
+                    registration.unregister();
+                }
+            });
+        }
+        
+        // Clear localStorage and sessionStorage
+        localStorage.clear();
+        sessionStorage.clear();
+        
+        // Force page reload with cache bypass
+        const currentUrl = new URL(window.location);
+        currentUrl.searchParams.set('t', Date.now());
+        
+        let countdown = 3;
+        const timer = document.getElementById('timer');
+        const countdownElement = document.getElementById('countdown');
+        
+        const interval = setInterval(() => {
+            countdown--;
+            timer.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(interval);
+                countdownElement.innerHTML = 'Redirecting now...';
+                
+                // Add cache-busting parameter and redirect
+                const targetUrl = 'simple-morphcast-test.html?t=' + Date.now() + '&cache=false';
+                window.location.href = targetUrl;
+            }
+        }, 1000);
+        
+        // Update links with cache-busting timestamps
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a[href]');
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (!href.includes('t=')) {
+                    const separator = href.includes('?') ? '&' : '?';
+                    link.href = href + separator + 't=' + Date.now();
+                }
+            });
+        });
+        
+        console.log('🔄 Cache clearing initiated');
+        console.log('📍 Current location:', window.location.href);
+        console.log('🌐 Protocol:', window.location.protocol);
+        console.log('🏠 Origin:', window.location.origin);
+    </script>
+</body>
+</html> 

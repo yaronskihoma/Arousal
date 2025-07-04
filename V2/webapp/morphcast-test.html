@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morphcast License Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .status {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        .warning { background: #fff3cd; color: #856404; }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Morphcast License Test</h1>
+    <p>Testing your Morphcast license key and SDK initialization.</p>
+    
+    <h2>License Information</h2>
+    <div id="licenseInfo" class="status">Loading license info...</div>
+    
+    <h2>SDK Status</h2>
+    <div id="sdkStatus" class="status">Checking SDK availability...</div>
+    
+    <h2>Test Controls</h2>
+    <button id="initBtn">Initialize Morphcast</button>
+    <button id="startBtn" disabled>Start Tracking</button>
+    <button id="stopBtn" disabled>Stop Tracking</button>
+    
+    <h2>Test Results</h2>
+    <div id="results">
+        <div id="initStatus" class="info">🔄 Waiting for initialization...</div>
+        <div id="moduleStatus" class="info">🔄 Waiting for module loading...</div>
+        <div id="trackingStatus" class="info">🔄 Waiting for tracking test...</div>
+    </div>
+    
+    <h2>Debug Log</h2>
+    <div id="debugLog" class="status" style="max-height: 200px; overflow-y: auto; font-family: monospace; font-size: 12px;"></div>
+    
+    <script src="https://ai-sdk.morphcast.com/v1.16/ai-sdk.js"></script>
+    <script>
+        // Configuration
+        const LICENSE_KEY = 'ap95c1923492e8512306644ca7fea0e66e7c27a47b97bb';
+        
+        // DOM elements
+        const licenseInfo = document.getElementById('licenseInfo');
+        const sdkStatus = document.getElementById('sdkStatus');
+        const initBtn = document.getElementById('initBtn');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const initStatus = document.getElementById('initStatus');
+        const moduleStatus = document.getElementById('moduleStatus');
+        const trackingStatus = document.getElementById('trackingStatus');
+        const debugLog = document.getElementById('debugLog');
+        
+        let morphcastInstance = null;
+        
+        // Debug logging
+        function log(message) {
+            console.log(message);
+            const timestamp = new Date().toLocaleTimeString();
+            debugLog.innerHTML += `<div>${timestamp}: ${message}</div>`;
+            debugLog.scrollTop = debugLog.scrollHeight;
+        }
+        
+        // License info
+        licenseInfo.innerHTML = `
+            <strong>License Key:</strong> ${LICENSE_KEY}<br>
+            <strong>Status:</strong> Active (from your screenshot)<br>
+            <strong>Origin:</strong> ${window.location.origin}
+        `;
+        licenseInfo.className = 'status info';
+        
+        // Check SDK availability
+        if (typeof CY === 'undefined') {
+            sdkStatus.textContent = '❌ Morphcast SDK not loaded';
+            sdkStatus.className = 'status error';
+            log('❌ Morphcast SDK not available');
+        } else {
+            sdkStatus.textContent = '✅ Morphcast SDK loaded';
+            sdkStatus.className = 'status success';
+            log('✅ Morphcast SDK available');
+            log('🔍 SDK version: ' + (CY.version || 'unknown'));
+        }
+        
+        // Initialize Morphcast
+        initBtn.addEventListener('click', async () => {
+            try {
+                log('🧠 Starting Morphcast initialization...');
+                initBtn.disabled = true;
+                
+                initStatus.textContent = '🔄 Initializing Morphcast...';
+                initStatus.className = 'info';
+                
+                if (typeof CY === 'undefined') {
+                    throw new Error('Morphcast SDK not loaded');
+                }
+                
+                log('🔑 Using license key: ' + LICENSE_KEY);
+                
+                const morphcastLoader = CY.loader()
+                    .licenseKey(LICENSE_KEY)
+                    .addModule(CY.modules().FACE_DETECTOR.name, { 
+                        maxInputFrameSize: 320, 
+                        smoothness: 0.83 
+                    })
+                    .addModule(CY.modules().FACE_AROUSAL_VALENCE.name, { 
+                        smoothness: 0.70 
+                    })
+                    .addModule(CY.modules().FACE_EMOTION.name, { 
+                        smoothness: 0.40 
+                    })
+                    .addModule(CY.modules().FACE_ATTENTION.name, { 
+                        smoothness: 0.83 
+                    });
+                
+                log('📦 Loading Morphcast modules...');
+                moduleStatus.textContent = '🔄 Loading modules...';
+                moduleStatus.className = 'info';
+                
+                const { start, stop } = await morphcastLoader.load();
+                morphcastInstance = { start, stop };
+                
+                log('✅ Morphcast initialized successfully');
+                initStatus.textContent = '✅ Morphcast initialized successfully';
+                initStatus.className = 'success';
+                
+                moduleStatus.textContent = '✅ All modules loaded';
+                moduleStatus.className = 'success';
+                
+                startBtn.disabled = false;
+                
+            } catch (error) {
+                log('❌ Morphcast initialization failed: ' + error.message);
+                initStatus.textContent = '❌ Initialization failed: ' + error.message;
+                initStatus.className = 'error';
+                
+                if (error.message.includes('license')) {
+                    moduleStatus.textContent = '❌ License key invalid or expired';
+                    moduleStatus.className = 'error';
+                } else {
+                    moduleStatus.textContent = '❌ Module loading failed';
+                    moduleStatus.className = 'error';
+                }
+                
+                initBtn.disabled = false;
+            }
+        });
+        
+        // Start tracking
+        startBtn.addEventListener('click', async () => {
+            try {
+                log('▶️ Starting tracking...');
+                startBtn.disabled = true;
+                
+                trackingStatus.textContent = '🔄 Starting tracking...';
+                trackingStatus.className = 'info';
+                
+                if (!morphcastInstance) {
+                    throw new Error('Morphcast not initialized');
+                }
+                
+                // Request camera permission first
+                log('🎬 Requesting camera permission...');
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                stream.getTracks().forEach(track => track.stop()); // Stop immediately
+                log('✅ Camera permission granted');
+                
+                await morphcastInstance.start();
+                log('✅ Tracking started successfully');
+                
+                trackingStatus.textContent = '✅ Tracking active';
+                trackingStatus.className = 'success';
+                
+                stopBtn.disabled = false;
+                
+            } catch (error) {
+                log('❌ Failed to start tracking: ' + error.message);
+                trackingStatus.textContent = '❌ Tracking failed: ' + error.message;
+                trackingStatus.className = 'error';
+                
+                startBtn.disabled = false;
+            }
+        });
+        
+        // Stop tracking
+        stopBtn.addEventListener('click', async () => {
+            try {
+                log('⏹️ Stopping tracking...');
+                stopBtn.disabled = true;
+                
+                if (morphcastInstance) {
+                    await morphcastInstance.stop();
+                    log('✅ Tracking stopped');
+                    
+                    trackingStatus.textContent = '⏹️ Tracking stopped';
+                    trackingStatus.className = 'info';
+                }
+                
+                startBtn.disabled = false;
+                
+            } catch (error) {
+                log('❌ Failed to stop tracking: ' + error.message);
+                stopBtn.disabled = false;
+            }
+        });
+        
+        // Set up event listeners for tracking data
+        if (typeof CY !== 'undefined') {
+            // Face detection
+            window.addEventListener(CY.modules().FACE_DETECTOR.eventName, (evt) => {
+                log('👤 Face detected: ' + evt.detail.totalFaces + ' faces');
+            });
+            
+            // Arousal/Valence
+            window.addEventListener(CY.modules().FACE_AROUSAL_VALENCE.eventName, (evt) => {
+                log('😊 Arousal: ' + evt.detail.output.arousal.toFixed(2) + 
+                    ', Valence: ' + evt.detail.output.valence.toFixed(2));
+            });
+            
+            // Emotions
+            window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
+                log('😀 Emotion: ' + evt.detail.output.dominantEmotion);
+            });
+            
+            // Attention
+            window.addEventListener(CY.modules().FACE_ATTENTION.eventName, (evt) => {
+                log('👁️ Attention: ' + evt.detail.output.attention.toFixed(2));
+            });
+        }
+        
+        log('🚀 Morphcast test page loaded');
+    </script>
+</body>
+</html> 

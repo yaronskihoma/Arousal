@@ -1,0 +1,15 @@
+{
+  "FIXED_TIMELINE_SECONDS": 30,
+  "OUTPUT_FORMAT": "png",
+  "FIGURE_SIZE": [19.2, 10.8],
+  "HEATMAP_COLORS": "YlOrRd",
+  "SMOOTHING_WINDOW": 11,
+  "HIGH_AROUSAL_THRESHOLD": 75,
+  "NORMALIZATION_RANGE": [-1, 1],
+  "EXPORT_FORMATS": ["csv", "xlsx", "json"],
+  "DPI": 300,
+  "FONT_SIZE": 10,
+  "TITLE_SIZE": 14,
+  "LABEL_SIZE": 12,
+  "LEGEND_SIZE": 10
+} 

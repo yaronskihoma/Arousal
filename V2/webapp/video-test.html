@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video CORS Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+        }
+        .status {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>Video CORS Test</h1>
+    <p>Testing video loading without CORS restrictions.</p>
+    
+    <h2>Video Player</h2>
+    <video id="testVideo" controls preload="auto">
+        <source src="https://assets.homa-cloud.com/cm0wqgm1d002gdslcdl3hq3yl/f4bea092-1f69-4f99-8d7a-fc8fb52ac610/CAY_R91_V1_WW_VID_1080x1920_24s.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div id="status" class="status">Loading video...</div>
+    
+    <h2>Test Results</h2>
+    <div id="results">
+        <div id="loadStatus" class="info">🔄 Waiting for video to load...</div>
+        <div id="playStatus" class="info">🔄 Waiting for play test...</div>
+        <div id="corsStatus" class="info">🔄 Checking CORS status...</div>
+    </div>
+    
+    <h2>Debug Information</h2>
+    <pre id="debugInfo">Loading...</pre>
+    
+    <script>
+        const video = document.getElementById('testVideo');
+        const status = document.getElementById('status');
+        const loadStatus = document.getElementById('loadStatus');
+        const playStatus = document.getElementById('playStatus');
+        const corsStatus = document.getElementById('corsStatus');
+        const debugInfo = document.getElementById('debugInfo');
+        
+        // Debug information
+        const debug = {
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent,
+            videoSrc: video.querySelector('source').src,
+            crossOrigin: video.crossOrigin,
+            origin: window.location.origin,
+            videoHost: new URL(video.querySelector('source').src).origin
+        };
+        
+        debugInfo.textContent = JSON.stringify(debug, null, 2);
+        
+        // Check CORS status
+        const videoOrigin = new URL(video.querySelector('source').src).origin;
+        const pageOrigin = window.location.origin;
+        
+        if (videoOrigin === pageOrigin) {
+            corsStatus.textContent = '✅ Same origin - no CORS issues';
+            corsStatus.className = 'success';
+        } else {
+            corsStatus.textContent = `⚠️ Cross-origin: ${pageOrigin} → ${videoOrigin}`;
+            corsStatus.className = 'info';
+        }
+        
+        // Video load events
+        video.addEventListener('loadstart', () => {
+            console.log('Video load started');
+            status.textContent = '🔄 Video loading started...';
+            status.className = 'status info';
+        });
+        
+        video.addEventListener('loadedmetadata', () => {
+            console.log('Video metadata loaded');
+            console.log('Duration:', video.duration);
+            loadStatus.textContent = `✅ Video loaded successfully (${video.duration.toFixed(1)}s duration)`;
+            loadStatus.className = 'success';
+            
+            status.textContent = '✅ Video ready to play';
+            status.className = 'status success';
+        });
+        
+        video.addEventListener('canplay', () => {
+            console.log('Video can play');
+            playStatus.textContent = '✅ Video ready for playback';
+            playStatus.className = 'success';
+        });
+        
+        video.addEventListener('error', (e) => {
+            console.error('Video error:', e);
+            console.error('Error code:', video.error?.code);
+            console.error('Error message:', video.error?.message);
+            
+            loadStatus.textContent = `❌ Video failed to load (Error: ${video.error?.code})`;
+            loadStatus.className = 'error';
+            
+            status.textContent = '❌ Video loading failed';
+            status.className = 'status error';
+        });
+        
+        video.addEventListener('play', () => {
+            console.log('Video started playing');
+            playStatus.textContent = '▶️ Video is playing';
+            playStatus.className = 'success';
+        });
+        
+        video.addEventListener('pause', () => {
+            console.log('Video paused');
+            playStatus.textContent = '⏸️ Video paused';
+            playStatus.className = 'info';
+        });
+        
+        // Auto-test after 3 seconds
+        setTimeout(() => {
+            if (video.readyState >= 3) { // HAVE_FUTURE_DATA
+                console.log('Auto-testing video playback...');
+                video.play().then(() => {
+                    console.log('Video play successful');
+                    setTimeout(() => {
+                        video.pause();
+                        console.log('Video paused after test');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Video play failed:', err);
+                    playStatus.textContent = '❌ Video play failed: ' + err.message;
+                    playStatus.className = 'error';
+                });
+            }
+        }, 3000);
+    </script>
+</body>
+</html> 
